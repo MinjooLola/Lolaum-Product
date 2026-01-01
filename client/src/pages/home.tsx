@@ -105,7 +105,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-                신청하기
+                리추얼 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
@@ -194,12 +194,12 @@ export default function Home() {
               <div className="text-sm text-muted-foreground">누적 챌린지 참여</div>
             </div>
             <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">3주</div>
-              <div className="text-sm text-muted-foreground">체계적 프로그램</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">60%+</div>
+              <div className="text-sm text-muted-foreground">재참여율</div>
             </div>
             <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">8종</div>
-              <div className="text-sm text-muted-foreground">다양한 챌린지</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15명+</div>
+              <div className="text-sm text-muted-foreground">1년 이상 참여 멤버</div>
             </div>
           </div>
         </div>
@@ -210,6 +210,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">8개 리추얼 챌린지</h2>
+            <p className="text-muted-foreground mb-2">모닝루틴, 운동, 독서, 영어... 누구나 갖고 싶어하는 습관들</p>
             <p className="text-muted-foreground">주 5회, 하루 10분 이상 - 원하는 챌린지만 선택해서 참여하세요</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

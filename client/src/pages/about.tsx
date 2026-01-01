@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { SiLinkedin, SiInstagram } from "react-icons/si";
+import { BookOpen } from "lucide-react";
 import rolaProfileUrl from "@assets/김민주_프로필_240525_1767243367580.png";
 import aboutBgUrl from "@assets/stock_images/notebook_pen_writing_794f0fdc.jpg";
 
@@ -92,7 +94,7 @@ export default function About() {
                   4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 
                   하루 10분 리추얼로 내 하루하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
                 </p>
-                <div className="text-sm text-muted-foreground space-y-1">
+                <div className="text-sm text-muted-foreground space-y-1 mb-6">
                   <p>서울국제고 졸업</p>
                   <p>한국외대 스페인어과 졸업</p>
                   <p>4년차 리추얼 챌린지 리더</p>
@@ -100,6 +102,23 @@ export default function About() {
                   <p>MBC 리추얼의힘 캠페인 방송 출연</p>
                   <p>리추얼 관련 각종 강연&코칭 진행</p>
                   <p>로컬 스타트업 컨설팅 회사 대표</p>
+                </div>
+                <div className="flex justify-center gap-3">
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href="https://www.linkedin.com/in/lolajjoo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-testid="link-linkedin">
+                      <SiLinkedin className="w-5 h-5" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href="https://www.instagram.com/lola_jjoo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-testid="link-instagram">
+                      <SiInstagram className="w-5 h-5" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href="https://brunch.co.kr/@lolajjoo" target="_blank" rel="noopener noreferrer" aria-label="Brunch" data-testid="link-brunch">
+                      <BookOpen className="w-5 h-5" />
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
