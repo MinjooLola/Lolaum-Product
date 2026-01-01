@@ -90,18 +90,14 @@ export default function About() {
                 <h3 className="text-xl font-bold">롤라</h3>
                 <p className="text-sm text-primary mb-4">롤라움 파운더 · 리추얼 챌린지 리더</p>
                 <p className="text-muted-foreground mb-4">
-                  2022년 모닝 리추얼로 새벽 기상을 시작한 후 삶이 완전히 달라지는 경험을 하고, 
-                  4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 
-                  하루 10분 리추얼로 내 하루하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
+                  2022년 모닝 리추얼로 시작한 새벽 기상 덕분에 삶이 완전히 달라지는 경험을 한 후, 4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 10분 리추얼로 하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
                 </p>
                 <div className="text-sm text-muted-foreground space-y-1 mb-6">
-                  <p>서울국제고 졸업</p>
-                  <p>한국외대 스페인어과 졸업</p>
-                  <p>4년차 리추얼 챌린지 리더</p>
                   <p>리추얼 커뮤니티 '리추얼클럽' 파운더</p>
-                  <p>MBC 리추얼의힘 캠페인 방송 출연</p>
-                  <p>리추얼 관련 각종 강연&코칭 진행</p>
-                  <p>로컬 스타트업 컨설팅 회사 대표</p>
+                  <p>MBC 〈리추얼의 힘〉 캠페인 방송 출연</p>
+                  <p>리추얼 기반 강연·코칭 다수 진행</p>
+                  <p className="pt-2">로컬 스타트업 컨설팅 회사 대표</p>
+                  <p>서울국제고등학교 · 한국외국어대학교(스페인어)</p>
                 </div>
                 <div className="flex justify-center gap-3">
                   <Button variant="ghost" size="icon" asChild>
