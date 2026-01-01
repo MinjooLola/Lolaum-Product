@@ -2,20 +2,20 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck, MessageCircle } from "lucide-react";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
 
 const KAKAO_URL = "https://pf.kakao.com/_xhQUHn";
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
 
 const challenges = [
-  { id: 1, title: "모닝리추얼", icon: Sun, category: "아침" },
-  { id: 2, title: "운동리추얼", icon: Dumbbell, category: "운동" },
-  { id: 3, title: "독서리추얼", icon: BookOpen, category: "독서" },
-  { id: 4, title: "영어리추얼", icon: Languages, category: "언어" },
-  { id: 5, title: "스페인어리추얼", icon: Languages, category: "언어" },
-  { id: 6, title: "기록리추얼", icon: PenLine, category: "기록" },
-  { id: 7, title: "자산관리리추얼", icon: Wallet, category: "재테크" },
-  { id: 8, title: "원서읽기리추얼", icon: BookOpenCheck, category: "독서" },
+  { id: 1, title: "모닝리추얼", icon: Sun, slug: "morning" },
+  { id: 2, title: "운동리추얼", icon: Dumbbell, slug: "exercise" },
+  { id: 3, title: "독서리추얼", icon: BookOpen, slug: "reading" },
+  { id: 4, title: "영어리추얼", icon: Languages, slug: "english" },
+  { id: 5, title: "스페인어리추얼", icon: Languages, slug: "spanish" },
+  { id: 6, title: "기록리추얼", icon: PenLine, slug: "writing" },
+  { id: 7, title: "자산관리리추얼", icon: Wallet, slug: "finance" },
+  { id: 8, title: "원서읽기리추얼", icon: BookOpenCheck, slug: "english-reading" },
 ];
 
 const featuredReviews = [
@@ -42,6 +42,29 @@ const featuredReviews = [
   }
 ];
 
+const communityBenefits = [
+  {
+    icon: Users,
+    title: "리추얼클럽 멤버십",
+    description: "챌린지 참여시 리추얼클럽 커뮤니티 멤버로 초대됩니다"
+  },
+  {
+    icon: Calendar,
+    title: "월간/연간 회고 모임",
+    description: "정기적인 회고 모임에서 함께 성장을 나눕니다"
+  },
+  {
+    icon: UserPlus,
+    title: "오프라인 번개 & 네트워킹",
+    description: "각종 챌린지 오프라인 번개에서 멋진 멤버들을 만나세요"
+  },
+  {
+    icon: Award,
+    title: "리추얼 리더 지원 자격",
+    description: "경험을 쌓고 리추얼 리더로 성장할 기회가 열립니다"
+  }
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -50,28 +73,31 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
             <Sparkles className="w-3 h-3 mr-1" />
-            42기 리추얼 챌린지 | 1/5(월) ~ 1/23(금)
+            42기 모집 마감: 1/3(토) 자정 | 선착순 마감
           </Badge>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
             의지가 아니라 환경으로
             <br />
             <span className="text-primary">당신의 루틴을 완성하는 곳</span>, 롤라움
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto" data-testid="text-hero-subheadline">
+          <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto" data-testid="text-hero-subheadline">
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
+          <p className="text-sm text-muted-foreground mb-8">
+            42기 챌린지 기간: 1/5(월) ~ 1/23(금)
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild data-testid="button-hero-contact">
-              <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                문의하기
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild data-testid="button-hero-apply">
+            <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
                 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild data-testid="button-hero-contact">
+              <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                문의하기
               </a>
             </Button>
           </div>
@@ -148,12 +174,14 @@ export default function Home() {
               const Icon = challenge.icon;
               return (
                 <Card key={challenge.id} className="overflow-visible hover-elevate text-center" data-testid={`card-challenge-${challenge.id}`}>
-                  <CardContent className="p-4">
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <h3 className="font-medium text-sm">{challenge.title}</h3>
-                  </CardContent>
+                  <Link href={`/challenges/${challenge.slug}`} className="block">
+                    <CardContent className="p-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h3 className="font-medium text-sm">{challenge.title}</h3>
+                    </CardContent>
+                  </Link>
                 </Card>
               );
             })}
@@ -169,8 +197,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews Section */}
+      {/* Community Benefits */}
       <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Gift className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl md:text-3xl font-bold">챌린지 참여 혜택</h2>
+            </div>
+            <p className="text-muted-foreground">챌린지에 참여하시면 리추얼클럽 커뮤니티 멤버로 초대됩니다</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {communityBenefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <Card key={index} className="text-center">
+                  <CardContent className="p-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold mb-2">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">참여자 후기</h2>
@@ -182,7 +239,7 @@ export default function Home() {
                 <CardContent className="p-6">
                   <Quote className="w-8 h-8 text-primary/30 mb-4" />
                   <p className="text-lg font-medium mb-4">"{review.highlight}"</p>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{review.content}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{review.content}</p>
                   <div className="flex items-center gap-2">
                     <Users className="w-4 h-4 text-muted-foreground" />
                     <span className="text-sm font-medium">{review.authorName}</span>
@@ -213,16 +270,16 @@ export default function Home() {
             다만, 끝까지 함께할 준비만 해주세요.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild data-testid="button-cta-contact">
-              <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                문의하기
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild data-testid="button-cta-apply">
+            <Button size="lg" variant="secondary" asChild data-testid="button-cta-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
                 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild data-testid="button-cta-contact">
+              <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                문의하기
               </a>
             </Button>
           </div>
