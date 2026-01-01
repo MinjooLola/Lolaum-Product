@@ -210,8 +210,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">8개 리추얼 챌린지</h2>
-            <p className="text-muted-foreground mb-2">모닝루틴, 운동, 독서, 영어... 누구나 갖고 싶어하는 습관들</p>
-            <p className="text-muted-foreground">주 5회, 하루 10분 이상 - 원하는 챌린지만 선택해서 참여하세요</p>
+            <p className="text-muted-foreground mb-2">
+              모닝루틴, 운동, 독서, 글쓰기, 영어..<br />
+              좋은 습관이 삶을 바꾼다는 걸 알지만<br />
+              계속 이어가는 건 늘 어려웠다면
+            </p>
+            <p className="text-muted-foreground font-medium">
+              주 5회, 하루 10분<br />
+              이제 나만의 리추얼로 하루를 설계해보세요.
+            </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {challenges.map((challenge) => (
