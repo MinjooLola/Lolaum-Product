@@ -1,38 +1,79 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import {
+  challenges,
+  reviews,
+  faqs,
+  applications,
+  type Challenge,
+  type InsertChallenge,
+  type Review,
+  type InsertReview,
+  type Faq,
+  type InsertFaq,
+  type Application,
+  type InsertApplication,
+} from "@shared/schema";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  // Challenges
+  getChallenges(): Promise<Challenge[]>;
+  getChallenge(id: number): Promise<Challenge | undefined>;
+  createChallenge(challenge: InsertChallenge): Promise<Challenge>;
+
+  // Reviews
+  getReviews(): Promise<Review[]>;
+  createReview(review: InsertReview): Promise<Review>;
+
+  // FAQs
+  getFaqs(): Promise<Faq[]>;
+  createFaq(faq: InsertFaq): Promise<Faq>;
+
+  // Applications
+  createApplication(app: InsertApplication): Promise<Application>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DatabaseStorage implements IStorage {
+  // Challenges
+  async getChallenges(): Promise<Challenge[]> {
+    return await db.select().from(challenges);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getChallenge(id: number): Promise<Challenge | undefined> {
+    const [challenge] = await db.select().from(challenges).where(eq(challenges.id, id));
+    return challenge;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async createChallenge(challenge: InsertChallenge): Promise<Challenge> {
+    const [newChallenge] = await db.insert(challenges).values(challenge).returning();
+    return newChallenge;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  // Reviews
+  async getReviews(): Promise<Review[]> {
+    return await db.select().from(reviews);
+  }
+
+  async createReview(review: InsertReview): Promise<Review> {
+    const [newReview] = await db.insert(reviews).values(review).returning();
+    return newReview;
+  }
+
+  // FAQs
+  async getFaqs(): Promise<Faq[]> {
+    return await db.select().from(faqs).orderBy(faqs.order);
+  }
+
+  async createFaq(faq: InsertFaq): Promise<Faq> {
+    const [newFaq] = await db.insert(faqs).values(faq).returning();
+    return newFaq;
+  }
+
+  // Applications
+  async createApplication(app: InsertApplication): Promise<Application> {
+    const [newApp] = await db.insert(applications).values(app).returning();
+    return newApp;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
