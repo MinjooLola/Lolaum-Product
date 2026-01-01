@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift } from "lucide-react";
 
 import communityImg1 from "@assets/모자이크_1767252651725.jpg";
 import communityImg2 from "@assets/KakaoTalk_20251214_094412042_27_1767252651728.jpg";
@@ -34,17 +34,17 @@ const challenges = [
 const featuredReviews = [
   {
     id: 1,
-    authorName: "주디",
-    highlight: "리추얼클럽은 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력",
-    content: "리추얼이 주는 기분과 성취가 너무 소중해요. 밀도 있게 아침 시간을 보내면 성취감이 크고 높은 생산성으로 하루를 보낼 수 있을 것 같은 기분이 더욱 크게 들어요.",
+    authorName: "재은",
+    highlight: "환경과 시스템을 만드는 것이 중요하다는 것을 알게 되었어요",
+    content: "일상의 리추얼을 만들기 전에는 하고 싶은 공부가 있어도 못하거나 미루게 되었었고 어쩔수없이 모든 생활이 일에 맞추어져 있었어요. 그런데 이제는 내가 하고싶은게 생활의 1순위가 되었어요.",
     category: "모닝"
   },
   {
     id: 2,
-    authorName: "한나",
-    highlight: "주체적인 삶을 산다는 만족감이 굉장히 컸어요",
-    content: "영어 공부뿐만이 아니라 하루 루틴을 형성하는 데도 큰 도움이 되었어요. 하루를 보다 여유롭게, 그리고 자기주도적으로 이끌어가게 되었어요.",
-    category: "영어"
+    authorName: "쨈",
+    highlight: "매일 읽는 책이 제 인생을 바꾸고 있다고 확신합니다",
+    content: "내가 지금 무언가 바꾸고 싶다면, 더 나아지고 싶은 어떤 방향이 있다면, 혹은 그 방향을 알고 싶다면, 새로운 경험을 하거나 책을 읽거나 둘 중 하나는 꼭 해야 한다고 생각해요.",
+    category: "독서"
   },
   {
     id: 3,
@@ -55,30 +55,23 @@ const featuredReviews = [
   }
 ];
 
-const communityBenefits = [
+const communityBenefitsWithPhotos = [
   {
-    icon: Users,
-    title: "리추얼클럽 멤버십",
-    description: "챌린지 참여시 리추얼클럽 커뮤니티 멤버로 초대됩니다"
-  },
-  {
-    icon: Calendar,
+    image: communityImg1,
     title: "분기별 회고 모임",
     description: "정기적인 회고 모임에서 함께 성장을 나눕니다"
   },
   {
-    icon: UserPlus,
+    image: communityImg2,
     title: "오프라인 번개 & 네트워킹",
     description: "각종 챌린지 오프라인 번개에서 멋진 멤버들을 만나세요"
   },
   {
-    icon: Award,
+    image: communityImg3,
     title: "리추얼 리더 지원 자격",
     description: "경험을 쌓고 리추얼 리더로 성장할 기회가 열립니다"
   }
 ];
-
-const communityImages = [communityImg1, communityImg2, communityImg3];
 
 export default function Home() {
   return (
@@ -177,34 +170,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Verified Performance Stats */}
-      <section className="py-16 px-4 bg-primary/5 border-y border-primary/10">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">검증된 성과</h2>
-            <p className="text-muted-foreground">2022년부터 4년간 체계적으로 운영된 프로그램</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">120+</div>
-              <div className="text-sm text-muted-foreground">누적 참가자</div>
-            </div>
-            <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">512+</div>
-              <div className="text-sm text-muted-foreground">누적 챌린지 참여</div>
-            </div>
-            <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">60%+</div>
-              <div className="text-sm text-muted-foreground">재참여율</div>
-            </div>
-            <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15명+</div>
-              <div className="text-sm text-muted-foreground">1년 이상 참여 멤버</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Challenges Preview */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
@@ -254,6 +219,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Verified Performance Stats */}
+      <section className="py-16 px-4 bg-primary/5 border-y border-primary/10">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">검증된 성과</h2>
+            <p className="text-muted-foreground">2022년부터 4년간 체계적으로 운영된 프로그램</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">120+</div>
+              <div className="text-sm text-muted-foreground">누적 참가자</div>
+            </div>
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">512+</div>
+              <div className="text-sm text-muted-foreground">누적 챌린지 참여</div>
+            </div>
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">60%+</div>
+              <div className="text-sm text-muted-foreground">재참여율</div>
+            </div>
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15명+</div>
+              <div className="text-sm text-muted-foreground">1년 이상 참여 멤버</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Community Benefits */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
@@ -265,34 +258,21 @@ export default function Home() {
             <p className="text-muted-foreground">챌린지에 참여하시면 리추얼클럽 커뮤니티 멤버로 초대됩니다</p>
           </div>
 
-          {/* Community Photos */}
-          <div className="grid grid-cols-3 gap-3 mb-10">
-            {communityImages.map((img, index) => (
-              <div key={index} className="aspect-[4/3] rounded-lg overflow-hidden">
-                <img 
-                  src={img} 
-                  alt={`리추얼클럽 커뮤니티 활동 ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+          {/* Community Photos with Benefits */}
+          <div className="grid grid-cols-3 gap-4">
+            {communityBenefitsWithPhotos.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                  <img 
+                    src={benefit.image} 
+                    alt={benefit.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-semibold mb-1 text-sm md:text-base">{benefit.title}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {communityBenefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <Card key={index} className="text-center">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
           </div>
         </div>
       </section>
