@@ -101,7 +101,7 @@ export default function Pricing() {
                   asChild
                   data-testid={`button-select-${pkg.id}`}
                 >
-                  <Link href="/apply">선택하기</Link>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">선택하기</a>
                 </Button>
               </CardContent>
             </Card>
@@ -181,10 +181,10 @@ export default function Pricing() {
         {/* CTA */}
         <div className="text-center mt-12">
           <Button size="lg" asChild data-testid="button-pricing-to-apply">
-            <Link href="/apply">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
               지금 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+            </a>
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
             문의: <a href="https://pf.kakao.com/_xhQUHn" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">롤라움 카카오톡 채널</a>

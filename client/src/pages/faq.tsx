@@ -75,10 +75,10 @@ export default function FAQ() {
               </a>
             </Button>
             <Button asChild data-testid="button-faq-to-apply">
-              <Link href="/apply">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
                 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

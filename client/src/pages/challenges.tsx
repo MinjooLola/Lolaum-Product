@@ -7,6 +7,7 @@ import { Clock, ArrowRight, Calendar, Sun, Dumbbell, BookOpen, Languages, PenLin
 const challenges = [
   {
     id: 1,
+    slug: "morning",
     title: "모닝리추얼챌린지",
     shortDescription: "평일(월~금) 아침 6:00~6:30 온라인 Live 진행",
     category: "아침",
@@ -16,6 +17,7 @@ const challenges = [
   },
   {
     id: 2,
+    slug: "exercise",
     title: "운동리추얼챌린지",
     shortDescription: "주 5회 10분 이상 운동 (주 2회 식단 인증 대체 가능)",
     category: "운동",
@@ -25,6 +27,7 @@ const challenges = [
   },
   {
     id: 3,
+    slug: "reading",
     title: "독서리추얼챌린지",
     shortDescription: "주 5회 10분 이상 책 읽기 + 독서 기록",
     category: "독서",
@@ -34,6 +37,7 @@ const challenges = [
   },
   {
     id: 4,
+    slug: "english",
     title: "영어리추얼챌린지",
     shortDescription: "주 5회 10분 이상 원하는 방식으로 영어 공부",
     category: "언어",
@@ -43,6 +47,7 @@ const challenges = [
   },
   {
     id: 5,
+    slug: "spanish",
     title: "스페인어리추얼챌린지",
     shortDescription: "주 5회 10분 이상 원하는 방식으로 스페인어 공부",
     category: "언어",
@@ -52,6 +57,7 @@ const challenges = [
   },
   {
     id: 6,
+    slug: "writing",
     title: "기록리추얼챌린지",
     shortDescription: "주 5회 글쓰기 (주 2회 글 읽기 대체 가능)",
     category: "기록",
@@ -61,6 +67,7 @@ const challenges = [
   },
   {
     id: 7,
+    slug: "finance",
     title: "자산관리리추얼챌린지",
     shortDescription: "주 5회 지출 관리 & 돈(경제) 공부 기록",
     category: "재테크",
@@ -70,6 +77,7 @@ const challenges = [
   },
   {
     id: 8,
+    slug: "english-reading",
     title: "원서읽기리추얼챌린지",
     shortDescription: "주 5회 정해진 분량 원서읽기 후 질문 답변 인증 (with.전문가 가이드)",
     category: "독서",
@@ -118,25 +126,27 @@ export default function Challenges() {
           {challenges.map((challenge) => {
             const Icon = challenge.icon;
             return (
-              <Card key={challenge.id} className="overflow-hidden" data-testid={`card-challenge-${challenge.id}`}>
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <Badge variant="secondary" className="mb-3">{challenge.category}</Badge>
-                  <h3 className="text-lg font-semibold mb-2">{challenge.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{challenge.shortDescription}</p>
-                  
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{challenge.duration}</span>
+              <Link key={challenge.id} href={`/challenges/${challenge.slug}`}>
+                <Card className="overflow-hidden hover-elevate cursor-pointer h-full" data-testid={`card-challenge-${challenge.id}`}>
+                  <CardContent className="p-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <span>·</span>
-                    <span>{challenge.frequency}</span>
-                  </div>
-                </CardContent>
-              </Card>
+                    <Badge variant="secondary" className="mb-3">{challenge.category}</Badge>
+                    <h3 className="text-lg font-semibold mb-2">{challenge.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{challenge.shortDescription}</p>
+                    
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        <span>{challenge.duration}</span>
+                      </div>
+                      <span>·</span>
+                      <span>{challenge.frequency}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>
@@ -155,10 +165,10 @@ export default function Challenges() {
               </Link>
             </Button>
             <Button asChild data-testid="button-apply-now">
-              <Link href="/apply">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
                 지금 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

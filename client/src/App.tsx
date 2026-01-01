@@ -7,6 +7,7 @@ import { Layout } from "@/components/layout";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Challenges from "@/pages/challenges";
+import ChallengeDetail from "@/pages/challenge-detail";
 import Pricing from "@/pages/pricing";
 import Reviews from "@/pages/reviews";
 import FAQ from "@/pages/faq";
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/challenges" component={Challenges} />
+        <Route path="/challenges/:slug" component={ChallengeDetail} />
         <Route path="/pricing" component={Pricing} />
         <Route path="/reviews" component={Reviews} />
         <Route path="/faq" component={FAQ} />
