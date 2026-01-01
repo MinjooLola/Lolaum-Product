@@ -23,10 +23,10 @@ import { Check, ArrowRight, ArrowLeft, Sparkles } from "lucide-react";
 import type { Challenge } from "@shared/schema";
 
 const packages = [
-  { id: "single", name: "1개 챌린지", price: 30000, deposit: 10000, maxChallenges: 1 },
-  { id: "double", name: "2개 챌린지", price: 50000, deposit: 20000, maxChallenges: 2 },
-  { id: "unlimited", name: "무제한", price: 80000, deposit: 30000, maxChallenges: 999 },
-  { id: "unlimited-coaching", name: "무제한 + 1:1", price: 150000, deposit: 30000, maxChallenges: 999 },
+  { id: "single", name: "1개 챌린지", price: 50000, deposit: 15000, maxChallenges: 1 },
+  { id: "double", name: "2개 챌린지", price: 90000, deposit: 30000, maxChallenges: 2 },
+  { id: "unlimited", name: "무제한", price: 120000, deposit: 30000, maxChallenges: 999 },
+  { id: "unlimited-coaching", name: "무제한 + 1:1 코칭", price: 150000, deposit: 30000, maxChallenges: 999 },
 ];
 
 const formSchema = z.object({
@@ -352,7 +352,7 @@ export default function Apply() {
                 카카오톡 채널을 추가해주세요.
               </p>
               <Button asChild data-testid="button-kakao-after-apply">
-                <a href="https://pf.kakao.com/_xoLxaG" target="_blank" rel="noopener noreferrer">
+                <a href="https://pf.kakao.com/_xhQUHn" target="_blank" rel="noopener noreferrer">
                   카카오톡 채널 추가하기
                 </a>
               </Button>

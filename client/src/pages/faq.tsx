@@ -70,16 +70,16 @@ export default function FAQ() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="outline" asChild>
-              <a href="https://pf.kakao.com/_xoLxaG" target="_blank" rel="noopener noreferrer" data-testid="button-kakao-channel">
+              <a href="https://pf.kakao.com/_xhQUHn" target="_blank" rel="noopener noreferrer" data-testid="button-kakao-channel">
                 카카오톡 문의하기
               </a>
             </Button>
-            <Link href="/apply">
-              <Button data-testid="button-faq-to-apply">
+            <Button asChild data-testid="button-faq-to-apply">
+              <Link href="/apply">
                 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

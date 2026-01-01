@@ -3,14 +3,21 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Clock, Users, ArrowRight, Quote, CheckCircle, XCircle } from "lucide-react";
-import type { Challenge, Review } from "@shared/schema";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck } from "lucide-react";
+import type { Review } from "@shared/schema";
+
+const challenges = [
+  { id: 1, title: "모닝리추얼", icon: Sun, category: "아침" },
+  { id: 2, title: "운동리추얼", icon: Dumbbell, category: "운동" },
+  { id: 3, title: "독서리추얼", icon: BookOpen, category: "독서" },
+  { id: 4, title: "영어리추얼", icon: Languages, category: "언어" },
+  { id: 5, title: "스페인어리추얼", icon: Languages, category: "언어" },
+  { id: 6, title: "기록리추얼", icon: PenLine, category: "기록" },
+  { id: 7, title: "자산관리리추얼", icon: Wallet, category: "재테크" },
+  { id: 8, title: "원서읽기리추얼", icon: BookOpenCheck, category: "독서" },
+];
 
 export default function Home() {
-  const { data: challenges } = useQuery<Challenge[]>({
-    queryKey: ["/api/challenges"],
-  });
-
   const { data: reviews } = useQuery<Review[]>({
     queryKey: ["/api/reviews"],
   });
@@ -22,7 +29,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
             <Sparkles className="w-3 h-3 mr-1" />
-            리추얼 설계 브랜드
+            42기 리추얼 챌린지 | 1/5(월) ~ 1/23(금)
           </Badge>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
             의지가 아니라 환경으로
@@ -34,17 +41,15 @@ export default function Home() {
             결국 '해내는 사람'을 만듭니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/apply">
-              <Button size="lg" data-testid="button-hero-apply">
+            <Button size="lg" asChild data-testid="button-hero-apply">
+              <Link href="/apply">
                 리추얼 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/about">
-              <Button variant="outline" size="lg" data-testid="button-hero-about">
-                롤라움이 궁금하다
-              </Button>
-            </Link>
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild data-testid="button-hero-about">
+              <Link href="/about">롤라움이 궁금하다</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -111,37 +116,31 @@ export default function Home() {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">리추얼 챌린지</h2>
-            <p className="text-muted-foreground">원하는 챌린지만 선택해서 참여하세요</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">8개 리추얼 챌린지</h2>
+            <p className="text-muted-foreground">주 5회, 하루 10분 이상 - 원하는 챌린지만 선택해서 참여하세요</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {challenges?.slice(0, 4).map((challenge) => (
-              <Card key={challenge.id} className="overflow-hidden hover-elevate" data-testid={`card-challenge-${challenge.id}`}>
-                <div 
-                  className="h-32 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${challenge.imageUrl})` }}
-                />
-                <CardContent className="p-4">
-                  <Badge variant="secondary" className="mb-2">{challenge.category}</Badge>
-                  <h3 className="font-semibold mb-1">{challenge.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{challenge.shortDescription}</p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Clock className="w-3 h-3" />
-                    <span>{challenge.duration}</span>
-                    <span>·</span>
-                    <span>{challenge.frequency}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+            {challenges.map((challenge) => {
+              const Icon = challenge.icon;
+              return (
+                <Card key={challenge.id} className="overflow-visible hover-elevate text-center" data-testid={`card-challenge-${challenge.id}`}>
+                  <CardContent className="p-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-medium text-sm">{challenge.title}</h3>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
           <div className="text-center mt-8">
-            <Link href="/challenges">
-              <Button variant="outline" data-testid="button-view-all-challenges">
-                챌린지 전체 보기
+            <Button variant="outline" asChild data-testid="button-view-all-challenges">
+              <Link href="/challenges">
+                챌린지 상세 보기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -172,12 +171,12 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/reviews">
-              <Button variant="outline" data-testid="button-view-all-reviews">
+            <Button variant="outline" asChild data-testid="button-view-all-reviews">
+              <Link href="/reviews">
                 후기 전체 보기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -191,12 +190,12 @@ export default function Home() {
           <p className="text-lg opacity-90 mb-8">
             다만, 끝까지 함께할 준비만 해주세요.
           </p>
-          <Link href="/apply">
-            <Button size="lg" variant="secondary" data-testid="button-cta-apply">
+          <Button size="lg" variant="secondary" asChild data-testid="button-cta-apply">
+            <Link href="/apply">
               지금 시작하기
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </section>
     </div>

@@ -130,12 +130,12 @@ export default function About() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link href="/challenges">
-            <Button size="lg" data-testid="button-about-to-challenges">
+          <Button size="lg" asChild data-testid="button-about-to-challenges">
+            <Link href="/challenges">
               챌린지 둘러보기
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
