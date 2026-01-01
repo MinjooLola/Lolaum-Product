@@ -58,7 +58,8 @@
   --chart-4: 280 50% 55%;
   --chart-5: 20 70% 55%;
 
-  --font-sans: 'Waguri', 'Pretendard', 'Inter', sans-serif;
+  --font-sans: 'Pretendard', 'Inter', sans-serif;
+  --font-display: 'Waguri', 'Pretendard', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
