@@ -7,10 +7,6 @@ const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu
 
 const blogLinks = [
   {
-    url: "https://blog.naver.com/heavenlee63/224124820216",
-    title: "일상의 조각들을 소소한 성취감으로 바꾸는 방법"
-  },
-  {
     url: "https://blog.naver.com/minjoo_lola/223495565888",
     title: "직장에 다니면서도 하고 싶은 일들 다 하면서 살 수 있어요"
   },
@@ -33,6 +29,10 @@ const blogLinks = [
   {
     url: "https://blog.naver.com/heavenlee63/224061871122",
     title: "내가 찾던 글쓰기 모임, 리추얼 챌린지"
+  },
+  {
+    url: "https://blog.naver.com/heavenlee63/224124820216",
+    title: "일상의 조각들을 소소한 성취감으로 바꾸는 방법"
   }
 ];
 
@@ -180,7 +180,7 @@ export default function Reviews() {
             <h2 className="text-xl font-semibold mb-2">실제 리추얼챌린지 참여자들의 후기입니다.</h2>
             <p className="text-sm text-muted-foreground">제목을 클릭하면 원문으로 이동합니다.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blogLinks.map((link, i) => (
               <a
                 key={i}
