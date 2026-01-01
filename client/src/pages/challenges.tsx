@@ -155,7 +155,8 @@ export default function Challenges() {
         <div className="text-center mt-16 p-8 bg-muted/30 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">어떤 챌린지부터 시작할지 고민되시나요?</h2>
           <p className="text-muted-foreground mb-6">
-            무제한 패키지로 8개 챌린지 모두 자율 참여해보세요
+            1:1 루틴 진단 & 코칭으로 나에게 맞는 챌린지를 찾아보세요.<br />
+            <span className="text-sm">무제한+코칭 패키지 선택 시 맞춤형 상담이 포함됩니다.</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="outline" asChild data-testid="button-view-pricing">
