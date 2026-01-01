@@ -171,6 +171,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Verified Performance Stats */}
+      <section className="py-16 px-4 bg-primary/5 border-y border-primary/10">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">검증된 성과</h2>
+            <p className="text-muted-foreground">2022년부터 4년간 체계적으로 운영된 프로그램</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">120+</div>
+              <div className="text-sm text-muted-foreground">누적 참가자</div>
+            </div>
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">512+</div>
+              <div className="text-sm text-muted-foreground">누적 챌린지 참여</div>
+            </div>
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">3주</div>
+              <div className="text-sm text-muted-foreground">체계적 프로그램</div>
+            </div>
+            <div className="text-center p-6 bg-background rounded-lg">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">8종</div>
+              <div className="text-sm text-muted-foreground">다양한 챌린지</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Challenges Preview */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
