@@ -4,13 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
 
-import morningImg from "@assets/stock_images/morning_sunrise_coff_d1cce5e1.jpg";
+import morningImg from "@assets/stock_images/sunrise_morning_rout_f42444d6.jpg";
 import exerciseImg from "@assets/stock_images/fitness_exercise_wor_f6f7eaf8.jpg";
 import readingImg from "@assets/stock_images/reading_book_cozy_li_b3f5e8d1.jpg";
-import englishImg from "@assets/stock_images/english_learning_stu_f8910ad4.jpg";
-import spanishImg from "@assets/stock_images/spanish_spain_langua_77c93588.jpg";
+import englishImg from "@assets/stock_images/english_language_lea_6e33ecce.jpg";
+import spanishImg from "@assets/stock_images/spanish_language_lea_410b38a0.jpg";
 import writingImg from "@assets/stock_images/writing_journal_diar_ea8c7133.jpg";
-import financeImg from "@assets/stock_images/finance_money_invest_3a4e52d8.jpg";
+import financeImg from "@assets/stock_images/financial_planning_i_d6440438.jpg";
 import englishReadingImg from "@assets/stock_images/english_book_reading_6c1dae52.jpg";
 
 const KAKAO_URL = "https://pf.kakao.com/_xhQUHn";
@@ -188,10 +188,13 @@ export default function Home() {
                       alt={challenge.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20 group-hover:from-black/80 group-hover:via-black/50 transition-colors" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-2">
-                      <h3 className="font-semibold text-sm md:text-base text-center">{challenge.title}</h3>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity mt-1">자세히 보기</span>
+                      <h3 className="font-bold text-base md:text-lg text-center drop-shadow-lg">{challenge.title}</h3>
+                      <div className="flex items-center gap-1 text-xs mt-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                        <span>자세히 보기</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </div>
                     </div>
                   </div>
                 </Card>

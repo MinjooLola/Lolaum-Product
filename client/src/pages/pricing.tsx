@@ -10,6 +10,8 @@ const packages = [
     name: "1개 챌린지",
     price: 50000,
     deposit: 15000,
+    dailyCost: "하루 2,381원",
+    dailyHint: "커피 한 잔보다 저렴해요",
     features: ["챌린지 1개 선택", "3주 프로그램", "커뮤니티 참여"],
     popular: false,
   },
@@ -18,6 +20,8 @@ const packages = [
     name: "2개 챌린지",
     price: 90000,
     deposit: 30000,
+    dailyCost: "하루 4,286원",
+    dailyHint: "아메리카노 한 잔 가격",
     features: ["챌린지 2개 선택", "3주 프로그램", "커뮤니티 참여", "10,000원 할인"],
     popular: false,
   },
@@ -26,6 +30,8 @@ const packages = [
     name: "무제한",
     price: 120000,
     deposit: 30000,
+    dailyCost: "하루 5,714원",
+    dailyHint: "라떼 한 잔 가격으로 8개 챌린지!",
     features: ["8개 챌린지 모두 참여 가능", "3주 프로그램", "커뮤니티 참여", "개당 15,000원꼴"],
     popular: true,
   },
@@ -34,6 +40,8 @@ const packages = [
     name: "무제한 + 1:1 코칭",
     price: 150000,
     deposit: 30000,
+    dailyCost: "하루 7,143원",
+    dailyHint: "점심값으로 인생 루틴 만들기",
     features: ["8개 챌린지 모두 참여 가능", "3주 프로그램", "1:1 루틴 진단 & 코칭", "맞춤형 케어 프로그램"],
     popular: false,
   },
@@ -85,6 +93,10 @@ export default function Pricing() {
                 <p className="text-sm text-muted-foreground mt-1">
                   + 보증금 {pkg.deposit.toLocaleString()}원
                 </p>
+                <div className="mt-3 pt-3 border-t">
+                  <p className="text-sm font-medium text-primary">{pkg.dailyCost}</p>
+                  <p className="text-xs text-muted-foreground">{pkg.dailyHint}</p>
+                </div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
