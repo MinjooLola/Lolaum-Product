@@ -5,11 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
 
-import heroImg1 from "@assets/KakaoTalk_20251214_094440900_04_1767252397947.jpg";
-import heroImg2 from "@assets/KakaoTalk_20251214_094440900_07_1767252397961.jpg";
-import heroImg3 from "@assets/모자이크_1767252397963.jpg";
-import heroImg4 from "@assets/KakaoTalk_20251214_094412042_15_1767252397964.jpg";
-import heroImg5 from "@assets/KakaoTalk_20251214_094434701_04_1767252397966.jpg";
+import heroImg1 from "@assets/모자이크_1767252651725.jpg";
+import heroImg2 from "@assets/KakaoTalk_20251214_094412042_27_1767252651728.jpg";
+import heroImg3 from "@assets/KakaoTalk_20251214_094440900_05_1767252651730.jpg";
 
 import morningImg from "@assets/stock_images/sunrise_morning_rout_f42444d6.jpg";
 import exerciseImg from "@assets/stock_images/fitness_exercise_wor_f6f7eaf8.jpg";
@@ -81,7 +79,7 @@ const communityBenefits = [
   }
 ];
 
-const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5];
+const heroImages = [heroImg1, heroImg2, heroImg3];
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -114,11 +112,11 @@ export default function Home() {
             </div>
           ))}
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/70" />
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <Badge className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+          <Badge className="mb-6 bg-primary text-primary-foreground border-primary font-semibold text-sm px-4 py-1">
             <Sparkles className="w-3 h-3 mr-1" />
             42기 모집 마감: 1/3(토) 자정 | 선착순 마감
           </Badge>
@@ -131,7 +129,7 @@ export default function Home() {
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
-          <p className="text-sm text-white/80 mb-8">
+          <p className="text-base font-medium text-white mb-8 bg-white/20 backdrop-blur-sm inline-block px-4 py-2 rounded-full">
             42기 챌린지 기간: 1/5(월) ~ 1/23(금)
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
