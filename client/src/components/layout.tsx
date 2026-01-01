@@ -47,7 +47,7 @@ export function Header() {
         {/* CTA */}
         <div className="hidden md:block">
           <Button size="sm" asChild data-testid="nav-button-apply">
-            <Link href="/apply">신청하기</Link>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">신청하기</a>
           </Button>
         </div>
 
@@ -76,7 +76,7 @@ export function Header() {
                 </Link>
               ))}
               <Button className="w-full mt-4" asChild data-testid="mobile-nav-button-apply">
-                <Link href="/apply" onClick={() => setOpen(false)}>신청하기</Link>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>신청하기</a>
               </Button>
             </div>
           </SheetContent>
@@ -104,6 +104,15 @@ export function Footer() {
               data-testid="footer-link-kakao"
             >
               카카오톡
+            </a>
+            <a 
+              href="https://www.instagram.com/lolaum_ritual/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+              data-testid="footer-link-instagram"
+            >
+              인스타그램
             </a>
           </div>
         </div>

@@ -42,13 +42,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
-              <Link href="/apply">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
                 리추얼 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              </a>
             </Button>
-            <Button variant="outline" size="lg" asChild data-testid="button-hero-about">
-              <Link href="/about">롤라움이 궁금하다</Link>
+            <Button variant="outline" size="lg" asChild data-testid="button-hero-contact">
+              <a href="https://pf.kakao.com/_xhQUHn" target="_blank" rel="noopener noreferrer">문의하기</a>
             </Button>
           </div>
         </div>
@@ -191,10 +191,10 @@ export default function Home() {
             다만, 끝까지 함께할 준비만 해주세요.
           </p>
           <Button size="lg" variant="secondary" asChild data-testid="button-cta-apply">
-            <Link href="/apply">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
               지금 시작하기
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+            </a>
           </Button>
         </div>
       </section>
