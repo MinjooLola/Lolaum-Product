@@ -1,37 +1,52 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote, ArrowRight, ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Quote, ArrowRight, ExternalLink, BookOpen, Sparkles, Target, Heart, Zap, Star, TrendingUp } from "lucide-react";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
 
 const blogLinks = [
   {
     url: "https://blog.naver.com/heavenlee63/224124820216",
-    title: "일상의 조각들을 소소한 성취감으로 바꾸는 방법"
+    title: "일상의 조각들을 소소한 성취감으로 바꾸는 방법",
+    icon: Sparkles,
+    color: "bg-amber-500/10 text-amber-600 dark:text-amber-400"
   },
   {
     url: "https://blog.naver.com/minjoo_lola/223495565888",
-    title: "직장에 다니면서도 하고 싶은 일들 다 하면서 살 수 있어요"
+    title: "직장에 다니면서도 하고 싶은 일들 다 하면서 살 수 있어요",
+    icon: Zap,
+    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400"
   },
   {
     url: "https://blog.naver.com/minjoo_lola/223830499174",
-    title: "프로 작심삼일러도 매일 영어공부를 할 수 있어요"
+    title: "프로 작심삼일러도 매일 영어공부를 할 수 있어요",
+    icon: Target,
+    color: "bg-green-500/10 text-green-600 dark:text-green-400"
   },
   {
     url: "https://blog.naver.com/minjoo_lola/224032460766",
-    title: "매일 리추얼로 책을 읽으면 생기는 변화"
+    title: "매일 리추얼로 책을 읽으면 생기는 변화",
+    icon: BookOpen,
+    color: "bg-purple-500/10 text-purple-600 dark:text-purple-400"
   },
   {
     url: "https://blog.naver.com/gamzzang-/224062220609",
-    title: "큰 노력이나 압박감 없이도 목표를 이뤄나갈 수 있어요"
+    title: "큰 노력이나 압박감 없이도 목표를 이뤄나갈 수 있어요",
+    icon: Heart,
+    color: "bg-rose-500/10 text-rose-600 dark:text-rose-400"
   },
   {
     url: "https://blog.naver.com/gamzzang-/223988087412",
-    title: "단순한 습관 형성을 넘어 실제 결과와 보람까지 얻어가요"
+    title: "단순한 습관 형성을 넘어 실제 결과와 보람까지 얻어가요",
+    icon: TrendingUp,
+    color: "bg-teal-500/10 text-teal-600 dark:text-teal-400"
   },
   {
     url: "https://blog.naver.com/heavenlee63/224061871122",
-    title: "내가 찾던 글쓰기 모임, 리추얼 챌린지"
+    title: "내가 찾던 글쓰기 모임, 리추얼 챌린지",
+    icon: Star,
+    color: "bg-orange-500/10 text-orange-600 dark:text-orange-400"
   }
 ];
 
@@ -174,51 +189,76 @@ export default function Reviews() {
         </div>
 
         {/* Blog Links */}
-        <div className="mb-12 p-6 bg-muted/30 rounded-lg">
-          <h2 className="font-semibold mb-4 flex items-center gap-2">
-            <ExternalLink className="w-4 h-4" />
-            블로그 후기
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {blogLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-2 p-3 bg-background rounded-md hover:bg-primary/5 transition-colors"
-                data-testid={`link-blog-${i}`}
-              >
-                <ExternalLink className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
-                <span className="text-sm">{link.title}</span>
-              </a>
-            ))}
+        <div className="mb-12">
+          <h2 className="text-xl font-semibold mb-6 text-center">블로그 후기</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {blogLinks.map((link, i) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                  data-testid={`link-blog-${i}`}
+                >
+                  <Card className="h-full hover-elevate transition-all duration-200">
+                    <CardContent className="p-5">
+                      <div className={`w-10 h-10 rounded-full ${link.color} flex items-center justify-center mb-3`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <p className="font-medium text-sm leading-relaxed mb-2">{link.title}</p>
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-primary transition-colors">
+                        <span>자세히 보기</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
+              );
+            })}
           </div>
         </div>
 
         {/* Reviews Grid */}
+        <h2 className="text-xl font-semibold mb-6 text-center">참여자 한줄 후기</h2>
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {reviews.map((review) => (
-            <Card key={review.id} data-testid={`card-review-${review.id}`}>
-              <CardContent className="p-6">
-                <Quote className="w-8 h-8 text-primary/30 mb-4" />
-                
-                {review.highlight && (
-                  <p className="text-lg font-medium mb-4">
-                    "{review.highlight}"
+          {reviews.map((review, index) => {
+            const accentColors = [
+              "border-l-amber-500",
+              "border-l-blue-500",
+              "border-l-green-500",
+              "border-l-purple-500",
+              "border-l-rose-500",
+              "border-l-teal-500",
+              "border-l-orange-500",
+            ];
+            const colorClass = accentColors[index % accentColors.length];
+            
+            return (
+              <Card key={review.id} className={`border-l-4 ${colorClass} rounded-l-none`} data-testid={`card-review-${review.id}`}>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <Quote className="w-6 h-6 text-primary/40 shrink-0" />
+                    {review.highlight && (
+                      <p className="text-base font-medium leading-relaxed">
+                        "{review.highlight}"
+                      </p>
+                    )}
+                  </div>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 pl-9">
+                    {review.content}
                   </p>
-                )}
-                
-                <p className="text-muted-foreground mb-6 text-sm">
-                  {review.content}
-                </p>
 
-                <div className="flex items-center pt-4 border-t">
-                  <span className="font-medium">- {review.authorName}</span>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <div className="flex items-center justify-between pt-4 border-t">
+                    <Badge variant="secondary" className="text-xs">{review.authorName}</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* CTA */}
