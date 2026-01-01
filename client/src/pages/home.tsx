@@ -2,27 +2,36 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
+
+import morningImg from "@assets/stock_images/morning_sunrise_coff_d1cce5e1.jpg";
+import exerciseImg from "@assets/stock_images/fitness_exercise_wor_f6f7eaf8.jpg";
+import readingImg from "@assets/stock_images/reading_book_cozy_li_b3f5e8d1.jpg";
+import englishImg from "@assets/stock_images/english_learning_stu_f8910ad4.jpg";
+import spanishImg from "@assets/stock_images/spanish_spain_langua_77c93588.jpg";
+import writingImg from "@assets/stock_images/writing_journal_diar_ea8c7133.jpg";
+import financeImg from "@assets/stock_images/finance_money_invest_3a4e52d8.jpg";
+import englishReadingImg from "@assets/stock_images/english_book_reading_6c1dae52.jpg";
 
 const KAKAO_URL = "https://pf.kakao.com/_xhQUHn";
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
 
 const challenges = [
-  { id: 1, title: "모닝리추얼", icon: Sun, slug: "morning" },
-  { id: 2, title: "운동리추얼", icon: Dumbbell, slug: "exercise" },
-  { id: 3, title: "독서리추얼", icon: BookOpen, slug: "reading" },
-  { id: 4, title: "영어리추얼", icon: Languages, slug: "english" },
-  { id: 5, title: "스페인어리추얼", icon: Languages, slug: "spanish" },
-  { id: 6, title: "기록리추얼", icon: PenLine, slug: "writing" },
-  { id: 7, title: "자산관리리추얼", icon: Wallet, slug: "finance" },
-  { id: 8, title: "원서읽기리추얼", icon: BookOpenCheck, slug: "english-reading" },
+  { id: 1, title: "모닝리추얼", image: morningImg, slug: "morning" },
+  { id: 2, title: "운동리추얼", image: exerciseImg, slug: "exercise" },
+  { id: 3, title: "독서리추얼", image: readingImg, slug: "reading" },
+  { id: 4, title: "영어리추얼", image: englishImg, slug: "english" },
+  { id: 5, title: "스페인어리추얼", image: spanishImg, slug: "spanish" },
+  { id: 6, title: "기록리추얼", image: writingImg, slug: "writing" },
+  { id: 7, title: "자산관리리추얼", image: financeImg, slug: "finance" },
+  { id: 8, title: "원서읽기리추얼", image: englishReadingImg, slug: "english-reading" },
 ];
 
 const featuredReviews = [
   {
     id: 1,
     authorName: "주디",
-    highlight: "모리는 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력",
+    highlight: "리추얼클럽은 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력",
     content: "리추얼이 주는 기분과 성취가 너무 소중해요. 밀도 있게 아침 시간을 보내면 성취감이 크고 높은 생산성으로 하루를 보낼 수 있을 것 같은 기분이 더욱 크게 들어요.",
     category: "모닝"
   },
@@ -50,7 +59,7 @@ const communityBenefits = [
   },
   {
     icon: Calendar,
-    title: "월간/연간 회고 모임",
+    title: "분기별 회고 모임",
     description: "정기적인 회고 모임에서 함께 성장을 나눕니다"
   },
   {
@@ -169,22 +178,25 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">8개 리추얼 챌린지</h2>
             <p className="text-muted-foreground">주 5회, 하루 10분 이상 - 원하는 챌린지만 선택해서 참여하세요</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-            {challenges.map((challenge) => {
-              const Icon = challenge.icon;
-              return (
-                <Card key={challenge.id} className="overflow-visible hover-elevate text-center" data-testid={`card-challenge-${challenge.id}`}>
-                  <Link href={`/challenges/${challenge.slug}`} className="block">
-                    <CardContent className="p-4">
-                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <Icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="font-medium text-sm">{challenge.title}</h3>
-                    </CardContent>
-                  </Link>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {challenges.map((challenge) => (
+              <Link key={challenge.id} href={`/challenges/${challenge.slug}`}>
+                <Card className="overflow-hidden hover-elevate group cursor-pointer" data-testid={`card-challenge-${challenge.id}`}>
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <img 
+                      src={challenge.image} 
+                      alt={challenge.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-2">
+                      <h3 className="font-semibold text-sm md:text-base text-center">{challenge.title}</h3>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity mt-1">자세히 보기</span>
+                    </div>
+                  </div>
                 </Card>
-              );
-            })}
+              </Link>
+            ))}
           </div>
           <div className="text-center mt-8">
             <Button variant="outline" asChild data-testid="button-view-all-challenges">

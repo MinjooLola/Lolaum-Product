@@ -1,15 +1,46 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote, ArrowRight } from "lucide-react";
+import { Quote, ArrowRight, ExternalLink } from "lucide-react";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
+
+const blogLinks = [
+  {
+    url: "https://blog.naver.com/heavenlee63/224124820216",
+    title: "왜 다들 리추얼챌린지를 몇 년간 계속 참여하는지 알게 됐어요"
+  },
+  {
+    url: "https://blog.naver.com/minjoo_lola/223495565888",
+    title: "하루 10분인데, 생활 리듬이 이렇게 달라질 줄은 몰랐어요"
+  },
+  {
+    url: "https://blog.naver.com/minjoo_lola/223830499174",
+    title: "작심삼일이 일상이던 제가 챌린지를 완주했어요"
+  },
+  {
+    url: "https://blog.naver.com/minjoo_lola/224032460766",
+    title: "의지가 약해서가 아니라, 환경이 없어서였다는 걸 깨달은 후기"
+  },
+  {
+    url: "https://blog.naver.com/gamzzang-/224062220609",
+    title: "바쁜 일상 속에서도 루틴을 놓치지 않게 된 현실적인 변화"
+  },
+  {
+    url: "https://blog.naver.com/gamzzang-/223988087412",
+    title: "완벽하지 않아도 계속하게 만든 리추얼챌린지의 힘"
+  },
+  {
+    url: "https://blog.naver.com/heavenlee63/224061871122",
+    title: "리추얼을 시작한 뒤, 하루를 대하는 태도가 달라졌어요"
+  }
+];
 
 const reviews = [
   {
     id: 1,
     authorName: "주디",
-    content: "리추얼이 주는 기분과 성취가 너무 소중해요. 밀도 있게 아침 시간을 보내면 성취감이 크고 높은 생산성으로 하루를 보낼 수 있을 것 같은 기분이 더욱 크게 들어요. 요즘은 목표한 바를 한 두 가지 정도 달성하지 못하더라도 제 삶의 최후 방어선인 모리를 지키려고 노력했음에 의의를 두고 있어요. 모리는 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력이에요.",
-    highlight: "모리는 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력"
+    content: "리추얼이 주는 기분과 성취가 너무 소중해요. 밀도 있게 아침 시간을 보내면 성취감이 크고 높은 생산성으로 하루를 보낼 수 있을 것 같은 기분이 더욱 크게 들어요. 요즘은 목표한 바를 한 두 가지 정도 달성하지 못하더라도 제 삶의 최후 방어선인 리추얼클럽을 지키려고 노력했음에 의의를 두고 있어요. 리추얼클럽은 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력이에요.",
+    highlight: "리추얼클럽은 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력"
   },
   {
     id: 2,
@@ -50,7 +81,7 @@ const reviews = [
   {
     id: 8,
     authorName: "올리",
-    content: "모리 이전에는 기분좋게 아침을 시작하지 못했는데, 그 이유가 하루를 자발적으로 시작하지 못했기 때문인 것 같아요. 함께 하는 친구와 나를 위한 시간이 있으니 아침이 즐거워요! 아침의 나를 믿는 마음이 생겨서, 나를 믿으면서 하루를 시작하는 느낌이 좋아요.",
+    content: "리추얼클럽 이전에는 기분좋게 아침을 시작하지 못했는데, 그 이유가 하루를 자발적으로 시작하지 못했기 때문인 것 같아요. 함께 하는 친구와 나를 위한 시간이 있으니 아침이 즐거워요! 아침의 나를 믿는 마음이 생겨서, 나를 믿으면서 하루를 시작하는 느낌이 좋아요.",
     highlight: "나를 믿으면서 하루를 시작하는 느낌이 좋아요"
   },
   {
@@ -86,14 +117,14 @@ const reviews = [
   {
     id: 14,
     authorName: "데이지",
-    content: "미라클모닝을 안 해본 건 아닌데, 항상 화면만 키고 제대로 하지 않았어요. 그런데 모리챌린지의 툴은 할 수밖에 없게 저를 이끌었어요.",
-    highlight: "모리챌린지의 툴은 할 수밖에 없게 저를 이끌었어요"
+    content: "미라클모닝을 안 해본 건 아닌데, 항상 화면만 키고 제대로 하지 않았어요. 그런데 리추얼챌린지의 툴은 할 수밖에 없게 저를 이끌었어요.",
+    highlight: "리추얼챌린지의 툴은 할 수밖에 없게 저를 이끌었어요"
   },
   {
     id: 15,
     authorName: "씬나",
-    content: "스스로에게 집중하며 살아왔는데, 모리를 통해 타인을 감각하게 되었어요. 다른 분들의 목표, 노력, 변화를 알게 되는 경험이었고, 페이스를 잃었을때에도 다른 사람들을 보며 달려갈 수 있어요. 언제나 등대처럼, 길을 잃어도 다시 돌아올 수 있는 모리가 있어 좋아요.",
-    highlight: "등대처럼, 길을 잃어도 다시 돌아올 수 있는 모리"
+    content: "스스로에게 집중하며 살아왔는데, 리추얼클럽을 통해 타인을 감각하게 되었어요. 다른 분들의 목표, 노력, 변화를 알게 되는 경험이었고, 페이스를 잃었을때에도 다른 사람들을 보며 달려갈 수 있어요. 언제나 등대처럼, 길을 잃어도 다시 돌아올 수 있는 리추얼클럽이 있어 좋아요.",
+    highlight: "등대처럼, 길을 잃어도 다시 돌아올 수 있는 리추얼클럽"
   },
   {
     id: 16,
@@ -104,13 +135,13 @@ const reviews = [
   {
     id: 17,
     authorName: "호이",
-    content: "삶의 적지 않은 부분에서 과정은 결과 못지 않게, 때로 결과보다도 더 진득하게 스스로를 규정한다고 생각해요. 모리는 제가 과정을 소중히 여기고 있다는 하나의 증명이라고 느껴요. 컨디션이 안 좋고 루틴이 무너졌을때 정상으로 돌아가는 방법을 꾸준히 함으로써 찾게된 것 같아요.",
-    highlight: "모리는 제가 과정을 소중히 여기고 있다는 증명"
+    content: "삶의 적지 않은 부분에서 과정은 결과 못지 않게, 때로 결과보다도 더 진득하게 스스로를 규정한다고 생각해요. 리추얼클럽은 제가 과정을 소중히 여기고 있다는 하나의 증명이라고 느껴요. 컨디션이 안 좋고 루틴이 무너졌을때 정상으로 돌아가는 방법을 꾸준히 함으로써 찾게된 것 같아요.",
+    highlight: "리추얼클럽은 제가 과정을 소중히 여기고 있다는 증명"
   },
   {
     id: 18,
     authorName: "향기",
-    content: "아무것도 안하고 싶은 날들을 보내다가도 모리가 있어서 그나마 숨쉬고 삶을 지킬 수 있는 것 같아요. 삶의 Why가 흔들릴때도 습관으로 삶을 지탱해보고자 노력해요. 아직은 완벽하게 자동화(습관화)가 되지는 않았지만, 이 시간을 조금더 지속하면서 완전히 몸에 익숙해진다면, 삶의 든든한 기둥이 될것이라 기대해요.",
+    content: "아무것도 안하고 싶은 날들을 보내다가도 리추얼클럽이 있어서 그나마 숨쉬고 삶을 지킬 수 있는 것 같아요. 삶의 Why가 흔들릴때도 습관으로 삶을 지탱해보고자 노력해요. 아직은 완벽하게 자동화(습관화)가 되지는 않았지만, 이 시간을 조금더 지속하면서 완전히 몸에 익숙해진다면, 삶의 든든한 기둥이 될것이라 기대해요.",
     highlight: "삶의 Why가 흔들릴때도 습관으로 삶을 지탱해요"
   },
   {
@@ -122,7 +153,7 @@ const reviews = [
   {
     id: 20,
     authorName: "수수",
-    content: "조금씩 꾸준히 하는 것의 힘을 알게 되었어요. 모리 시간에 조금이라도 자주 하는 것을 목표로 하니 무리하지 않는 선에서 성취감을 느끼게 되고, 시간을 활용하면서 느끼는 효용감이 큰 것 같아요.",
+    content: "조금씩 꾸준히 하는 것의 힘을 알게 되었어요. 리추얼클럽 시간에 조금이라도 자주 하는 것을 목표로 하니 무리하지 않는 선에서 성취감을 느끼게 되고, 시간을 활용하면서 느끼는 효용감이 큰 것 같아요.",
     highlight: "조금씩 꾸준히 하는 것의 힘을 알게 되었어요"
   }
 ];
@@ -140,6 +171,29 @@ export default function Reviews() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             "의지 → 시스템" 변화를 경험한 분들의 이야기
           </p>
+        </div>
+
+        {/* Blog Links */}
+        <div className="mb-12 p-6 bg-muted/30 rounded-lg">
+          <h2 className="font-semibold mb-4 flex items-center gap-2">
+            <ExternalLink className="w-4 h-4" />
+            블로그 후기
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {blogLinks.map((link, i) => (
+              <a
+                key={i}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 p-3 bg-background rounded-md hover:bg-primary/5 transition-colors"
+                data-testid={`link-blog-${i}`}
+              >
+                <ExternalLink className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
+                <span className="text-sm">{link.title}</span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Reviews Grid */}
