@@ -8,9 +8,9 @@ import morningImg from "@assets/stock_images/sunrise_morning_rout_f42444d6.jpg";
 import exerciseImg from "@assets/stock_images/fitness_exercise_wor_f6f7eaf8.jpg";
 import readingImg from "@assets/stock_images/reading_book_cozy_li_b3f5e8d1.jpg";
 import englishImg from "@assets/stock_images/english_language_lea_6e33ecce.jpg";
-import spanishImg from "@assets/stock_images/spanish_language_lea_410b38a0.jpg";
+import spanishImg from "@assets/stock_images/spain_barcelona_sagr_ed389981.jpg";
 import writingImg from "@assets/stock_images/writing_journal_diar_ea8c7133.jpg";
-import financeImg from "@assets/stock_images/financial_planning_i_d6440438.jpg";
+import financeImg from "@assets/stock_images/money_cash_bills_cur_20815930.jpg";
 import englishReadingImg from "@assets/stock_images/english_book_reading_6c1dae52.jpg";
 
 const KAKAO_URL = "https://pf.kakao.com/_xhQUHn";

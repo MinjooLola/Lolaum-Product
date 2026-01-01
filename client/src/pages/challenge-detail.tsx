@@ -337,17 +337,12 @@ export default function ChallengeDetail() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <Button size="lg" asChild data-testid="button-challenge-apply">
             <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
               챌린지 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-            <Link href="/pricing">
-              패키지 가격 보기
-            </Link>
           </Button>
         </div>
       </div>
