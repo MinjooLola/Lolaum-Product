@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote, ArrowRight, ExternalLink } from "lucide-react";
+import { Quote, ArrowRight } from "lucide-react";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
 
@@ -127,15 +127,6 @@ const reviews = [
   }
 ];
 
-const blogLinks = [
-  { url: "https://blog.naver.com/minjoo_lola/223495565888", title: "롤라의 리추얼 이야기" },
-  { url: "https://blog.naver.com/minjoo_lola/223830499174", title: "모닝 리추얼 챌린지 후기" },
-  { url: "https://blog.naver.com/minjoo_lola/224032460766", title: "리추얼로 변화한 일상" },
-  { url: "https://blog.naver.com/gamzzang-/224062220609", title: "3주 챌린지 완주 후기" },
-  { url: "https://blog.naver.com/gamzzang-/223988087412", title: "운동 리추얼 경험담" },
-  { url: "https://blog.naver.com/heavenlee63/224061871122", title: "독서 리추얼로 읽은 책들" },
-  { url: "https://blog.naver.com/heavenlee63/224124820216", title: "리추얼 챌린지 완주 소감" },
-];
 
 export default function Reviews() {
   return (
@@ -149,29 +140,6 @@ export default function Reviews() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             "의지 → 시스템" 변화를 경험한 분들의 이야기
           </p>
-        </div>
-
-        {/* Blog Links */}
-        <div className="mb-12 p-6 bg-muted/30 rounded-lg">
-          <h2 className="font-semibold mb-4 flex items-center gap-2">
-            <ExternalLink className="w-4 h-4" />
-            블로그 후기
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {blogLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-1.5 bg-background rounded-md text-sm hover:bg-primary/10 transition-colors"
-                data-testid={`link-blog-${i}`}
-              >
-                {link.title}
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* Reviews Grid */}
