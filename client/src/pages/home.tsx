@@ -1,10 +1,11 @@
 import { Link } from "wouter";
-import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck } from "lucide-react";
-import type { Review } from "@shared/schema";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck, MessageCircle } from "lucide-react";
+
+const KAKAO_URL = "https://pf.kakao.com/_xhQUHn";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
 
 const challenges = [
   { id: 1, title: "모닝리추얼", icon: Sun, category: "아침" },
@@ -17,11 +18,31 @@ const challenges = [
   { id: 8, title: "원서읽기리추얼", icon: BookOpenCheck, category: "독서" },
 ];
 
-export default function Home() {
-  const { data: reviews } = useQuery<Review[]>({
-    queryKey: ["/api/reviews"],
-  });
+const featuredReviews = [
+  {
+    id: 1,
+    authorName: "주디",
+    highlight: "모리는 제 삶의 중심이자 꾸준함의 힘을 알려주고 있는 원동력",
+    content: "리추얼이 주는 기분과 성취가 너무 소중해요. 밀도 있게 아침 시간을 보내면 성취감이 크고 높은 생산성으로 하루를 보낼 수 있을 것 같은 기분이 더욱 크게 들어요.",
+    category: "모닝"
+  },
+  {
+    id: 2,
+    authorName: "한나",
+    highlight: "주체적인 삶을 산다는 만족감이 굉장히 컸어요",
+    content: "영어 공부뿐만이 아니라 하루 루틴을 형성하는 데도 큰 도움이 되었어요. 하루를 보다 여유롭게, 그리고 자기주도적으로 이끌어가게 되었어요.",
+    category: "영어"
+  },
+  {
+    id: 3,
+    authorName: "지로",
+    highlight: "운동이 일상의 한 부분으로 자연스럽게 자리 잡았어요",
+    content: "운동을 한 다음 날 아침은 확실히 기상하기가 한결 수월했고, 출근길 발걸음도 이전보다 가벼워졌어요!",
+    category: "운동"
+  }
+];
 
+export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -41,14 +62,17 @@ export default function Home() {
             결국 '해내는 사람'을 만듭니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild data-testid="button-hero-apply">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                리추얼 챌린지 신청하기
-                <ArrowRight className="w-4 h-4 ml-2" />
+            <Button size="lg" asChild data-testid="button-hero-contact">
+              <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                문의하기
               </a>
             </Button>
-            <Button variant="outline" size="lg" asChild data-testid="button-hero-contact">
-              <a href="https://pf.kakao.com/_xhQUHn" target="_blank" rel="noopener noreferrer">문의하기</a>
+            <Button variant="outline" size="lg" asChild data-testid="button-hero-apply">
+              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                신청하기
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
             </Button>
           </div>
         </div>
@@ -153,7 +177,7 @@ export default function Home() {
             <p className="text-muted-foreground">"의지 → 시스템" 변화를 경험한 분들</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {reviews?.slice(0, 3).map((review) => (
+            {featuredReviews.map((review) => (
               <Card key={review.id} data-testid={`card-review-${review.id}`}>
                 <CardContent className="p-6">
                   <Quote className="w-8 h-8 text-primary/30 mb-4" />
@@ -162,9 +186,7 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <Users className="w-4 h-4 text-muted-foreground" />
                     <span className="text-sm font-medium">{review.authorName}</span>
-                    {review.category && (
-                      <Badge variant="outline" className="ml-auto">{review.category}</Badge>
-                    )}
+                    <Badge variant="outline" className="ml-auto">{review.category}</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -190,12 +212,20 @@ export default function Home() {
           <p className="text-lg opacity-90 mb-8">
             다만, 끝까지 함께할 준비만 해주세요.
           </p>
-          <Button size="lg" variant="secondary" asChild data-testid="button-cta-apply">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-              지금 시작하기
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" asChild data-testid="button-cta-contact">
+              <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                문의하기
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild data-testid="button-cta-apply">
+              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                신청하기
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
