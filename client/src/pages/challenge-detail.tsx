@@ -1,7 +1,6 @@
-import { Link, useParams } from "wouter";
+import { Link, useParams, Redirect } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowRight, Clock, Calendar, Users, CheckCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck } from "lucide-react";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
@@ -174,23 +173,13 @@ const challengesData: Record<string, ChallengeData> = {
 
 export default function ChallengeDetail() {
   const params = useParams<{ slug: string }>();
-  const challenge = params.slug ? challengesData[params.slug] : null;
-
-  if (!challenge) {
-    return (
-      <div className="min-h-screen py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-2xl font-bold mb-4">챌린지를 찾을 수 없습니다</h1>
-          <Button asChild>
-            <Link href="/challenges">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              챌린지 목록으로
-            </Link>
-          </Button>
-        </div>
-      </div>
-    );
+  const slug = params.slug;
+  
+  if (!slug || !challengesData[slug]) {
+    return <Redirect to="/challenges" />;
   }
+  
+  const challenge = challengesData[slug];
 
   const Icon = challenge.icon;
 

@@ -126,8 +126,8 @@ export default function Challenges() {
           {challenges.map((challenge) => {
             const Icon = challenge.icon;
             return (
-              <Link key={challenge.id} href={`/challenges/${challenge.slug}`}>
-                <Card className="overflow-hidden hover-elevate cursor-pointer h-full" data-testid={`card-challenge-${challenge.id}`}>
+              <Card key={challenge.id} className="overflow-hidden hover-elevate h-full" data-testid={`card-challenge-${challenge.id}`}>
+                <Link href={`/challenges/${challenge.slug}`} className="block h-full">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-primary" />
@@ -145,8 +145,8 @@ export default function Challenges() {
                       <span>{challenge.frequency}</span>
                     </div>
                   </CardContent>
-                </Card>
-              </Link>
+                </Link>
+              </Card>
             );
           })}
         </div>
