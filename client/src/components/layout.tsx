@@ -32,7 +32,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 text-sm rounded-md transition-colors hover-elevate ${
+              className={`px-3 py-2 text-sm font-display rounded-md transition-colors hover-elevate ${
                 location === link.href
                   ? "text-primary font-medium"
                   : "text-muted-foreground"
@@ -46,7 +46,7 @@ export function Header() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Button size="sm" asChild data-testid="nav-button-apply">
+          <Button size="sm" className="font-display" asChild data-testid="nav-button-apply">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">신청하기</a>
           </Button>
         </div>
@@ -64,7 +64,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block px-3 py-2 text-lg rounded-md transition-colors ${
+                  className={`block px-3 py-2 text-lg font-display rounded-md transition-colors ${
                     location === link.href
                       ? "text-primary font-medium bg-primary/5"
                       : "text-muted-foreground"
@@ -75,7 +75,7 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="w-full mt-4" asChild data-testid="mobile-nav-button-apply">
+              <Button className="w-full mt-4 font-display" asChild data-testid="mobile-nav-button-apply">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>신청하기</a>
               </Button>
             </div>

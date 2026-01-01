@@ -83,7 +83,7 @@ export default function Home() {
             <Sparkles className="w-3 h-3 mr-1" />
             42기 모집 마감: 1/3(토) 자정 | 선착순 마감
           </Badge>
-          <h1 className="text-3xl md:text-5xl font-bold font-display leading-tight mb-6" data-testid="text-hero-headline">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
             의지가 아니라 환경으로
             <br />
             <span className="text-primary">당신의 루틴을 완성하는 곳</span>, 롤라움
@@ -115,7 +115,7 @@ export default function Home() {
       {/* Problem / Solution Section */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold font-display text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
             왜 루틴은 항상 무너질까요?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -174,7 +174,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">8개 리추얼 챌린지</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">8개 리추얼 챌린지</h2>
             <p className="text-muted-foreground mb-2">
               모닝루틴, 운동, 독서, 글쓰기, 영어..<br />
               좋은 습관이 삶을 바꾼다는 걸 알지만<br />
@@ -223,7 +223,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-primary/5 border-y border-primary/10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">검증된 성과</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">검증된 성과</h2>
             <p className="text-muted-foreground">2022년부터 4년간 체계적으로 운영된 프로그램</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -253,7 +253,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 mb-4">
               <Gift className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl md:text-3xl font-bold font-display">챌린지 참여 혜택</h2>
+              <h2 className="text-2xl md:text-3xl font-bold">챌린지 참여 혜택</h2>
             </div>
             <p className="text-muted-foreground">챌린지에 참여하시면 리추얼클럽 커뮤니티 멤버로 초대됩니다</p>
           </div>
@@ -281,7 +281,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">참여자 후기</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">참여자 후기</h2>
             <p className="text-muted-foreground">"의지 → 시스템" 변화를 경험한 분들</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -314,7 +314,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary text-primary-foreground">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             완벽해질 필요는 없습니다
           </h2>
           <p className="text-lg opacity-90 mb-8">
