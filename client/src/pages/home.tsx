@@ -1,8 +1,15 @@
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar, UserPlus, Award } from "lucide-react";
+
+import heroImg1 from "@assets/KakaoTalk_20251214_094440900_04_1767252397947.jpg";
+import heroImg2 from "@assets/KakaoTalk_20251214_094440900_07_1767252397961.jpg";
+import heroImg3 from "@assets/모자이크_1767252397963.jpg";
+import heroImg4 from "@assets/KakaoTalk_20251214_094412042_15_1767252397964.jpg";
+import heroImg5 from "@assets/KakaoTalk_20251214_094434701_04_1767252397966.jpg";
 
 import morningImg from "@assets/stock_images/sunrise_morning_rout_f42444d6.jpg";
 import exerciseImg from "@assets/stock_images/fitness_exercise_wor_f6f7eaf8.jpg";
@@ -74,26 +81,57 @@ const communityBenefits = [
   }
 ];
 
+const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5];
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 md:py-32 bg-gradient-to-b from-accent/30 to-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-6">
+      <section className="relative py-20 px-4 md:py-32 min-h-[600px] flex items-center">
+        {/* Background Slideshow */}
+        <div className="absolute inset-0 overflow-hidden">
+          {heroImages.map((img, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={img}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <Badge className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm">
             <Sparkles className="w-3 h-3 mr-1" />
             42기 모집 마감: 1/3(토) 자정 | 선착순 마감
           </Badge>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white drop-shadow-lg" data-testid="text-hero-headline">
             의지가 아니라 환경으로
             <br />
             <span className="text-primary">당신의 루틴을 완성하는 곳</span>, 롤라움
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto" data-testid="text-hero-subheadline">
+          <p className="text-lg md:text-xl text-white/90 mb-4 max-w-2xl mx-auto drop-shadow" data-testid="text-hero-subheadline">
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
-          <p className="text-sm text-muted-foreground mb-8">
+          <p className="text-sm text-white/80 mb-8">
             42기 챌린지 기간: 1/5(월) ~ 1/23(금)
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -103,12 +141,26 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
-            <Button variant="outline" size="lg" asChild data-testid="button-hero-contact">
+            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white/20" asChild data-testid="button-hero-contact">
               <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 문의하기
               </a>
             </Button>
+          </div>
+
+          {/* Slide indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentSlide ? "bg-white w-6" : "bg-white/50"
+                }`}
+                aria-label={`슬라이드 ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
