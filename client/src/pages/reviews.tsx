@@ -7,31 +7,31 @@ const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu
 const blogLinks = [
   {
     url: "https://blog.naver.com/heavenlee63/224124820216",
-    title: "왜 다들 리추얼챌린지를 몇 년간 계속 참여하는지 알게 됐어요"
+    title: "일상의 조각들을 소소한 성취감으로 바꾸는 방법"
   },
   {
     url: "https://blog.naver.com/minjoo_lola/223495565888",
-    title: "하루 10분인데, 생활 리듬이 이렇게 달라질 줄은 몰랐어요"
+    title: "직장에 다니면서도 하고 싶은 일들 다 하면서 살 수 있어요"
   },
   {
     url: "https://blog.naver.com/minjoo_lola/223830499174",
-    title: "작심삼일이 일상이던 제가 챌린지를 완주했어요"
+    title: "프로 작심삼일러도 매일 영어공부를 할 수 있어요"
   },
   {
     url: "https://blog.naver.com/minjoo_lola/224032460766",
-    title: "의지가 약해서가 아니라, 환경이 없어서였다는 걸 깨달은 후기"
+    title: "매일 리추얼로 책을 읽으면 생기는 변화"
   },
   {
     url: "https://blog.naver.com/gamzzang-/224062220609",
-    title: "바쁜 일상 속에서도 루틴을 놓치지 않게 된 현실적인 변화"
+    title: "큰 노력이나 압박감 없이도 목표를 이뤄나갈 수 있어요"
   },
   {
     url: "https://blog.naver.com/gamzzang-/223988087412",
-    title: "완벽하지 않아도 계속하게 만든 리추얼챌린지의 힘"
+    title: "단순한 습관 형성을 넘어 실제 결과와 보람까지 얻어가요"
   },
   {
     url: "https://blog.naver.com/heavenlee63/224061871122",
-    title: "리추얼을 시작한 뒤, 하루를 대하는 태도가 달라졌어요"
+    title: "내가 찾던 글쓰기 모임, 리추얼 챌린지"
   }
 ];
 
