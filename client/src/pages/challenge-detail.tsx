@@ -2,8 +2,17 @@ import { Link, useParams, Redirect } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Clock, Calendar, Users, CheckCircle, Sun, Dumbbell, BookOpen, Languages, PenLine, Wallet, BookOpenCheck } from "lucide-react";
+import lauraProfileUrl from "@assets/image_1767247209890.png";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
+
+interface LeaderInfo {
+  name: string;
+  title: string;
+  image: string;
+  description: string;
+  credentials: string[];
+}
 
 interface ChallengeData {
   slug: string;
@@ -15,6 +24,7 @@ interface ChallengeData {
   schedule: string;
   frequency: string;
   recommendations: string[];
+  leader?: LeaderInfo;
 }
 
 const challengesData: Record<string, ChallengeData> = {
@@ -167,7 +177,20 @@ const challengesData: Record<string, ChallengeData> = {
       "원서 읽기를 여러 번 포기했던 분",
       "깊이 있는 독서를 경험해보고 싶은 분",
       "혼자서는 동력이 부족했던 분"
-    ]
+    ],
+    leader: {
+      name: "로라",
+      title: "원서읽기 리추얼 리더",
+      image: lauraProfileUrl,
+      description: "원서읽기 덕후로 살아온 지 어느덧 16년. 작가의 언어 그대로를 읽어내는 원서읽기의 즐거움을 이제 여러분과 공유하고 싶어요. 영어 '독해'가 아닌 영어 '독서'의 세계가 펼쳐지도록 친절히 안내할게요!",
+      credentials: [
+        "성남외고 영어과 졸업",
+        "서울대 경제학부 졸업",
+        "2021년 후반기 육군 통역장교 선발시험 합격",
+        "(전) 영어 라디오 채널 TBS eFM 객원 리포터",
+        "(전) IT회사 글로벌 PR 매니저"
+      ]
+    }
   }
 };
 
@@ -256,6 +279,33 @@ export default function ChallengeDetail() {
             </ul>
           </CardContent>
         </Card>
+
+        {/* Leader Profile (only for english-reading) */}
+        {challenge.leader && (
+          <Card className="mb-8">
+            <CardContent className="p-6">
+              <h2 className="font-semibold mb-6 text-center">리더 소개</h2>
+              <div className="flex flex-col items-center text-center mb-6">
+                <img 
+                  src={challenge.leader.image} 
+                  alt={`${challenge.leader.name} 프로필`}
+                  className="w-24 h-24 rounded-full object-cover mb-4"
+                  data-testid="img-leader-profile"
+                />
+                <h3 className="text-lg font-bold">{challenge.leader.name}</h3>
+                <p className="text-sm text-primary">{challenge.leader.title}</p>
+              </div>
+              <p className="text-muted-foreground mb-4 text-center">
+                {challenge.leader.description}
+              </p>
+              <div className="text-sm text-muted-foreground space-y-1 text-center">
+                {challenge.leader.credentials.map((cred, i) => (
+                  <p key={i}>{cred}</p>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         <div className="bg-muted/30 rounded-lg p-6 text-center mb-8">
           <p className="text-sm text-muted-foreground mb-4">

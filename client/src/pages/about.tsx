@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Repeat, ArrowRight, Leaf, Clock, Users, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import rolaProfileUrl from "@assets/김민주_프로필_240525_1767243367580.png";
-import lauraProfileUrl from "@assets/image_1767247209890.png";
-import aboutBgUrl from "@assets/stock_images/morning_sunrise_peac_c8a895ae.jpg";
+import aboutBgUrl from "@assets/stock_images/notebook_pen_writing_794f0fdc.jpg";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog";
 
@@ -83,68 +82,37 @@ export default function About() {
             </div>
           </section>
 
-          {/* Leader Profiles */}
+          {/* Founder Profile */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-8 text-center">리더 소개</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Rola */}
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-6">
-                    <img 
-                      src={rolaProfileUrl} 
-                      alt="롤라 프로필" 
-                      className="w-32 h-32 rounded-full object-cover mb-4"
-                      data-testid="img-rola-profile"
-                    />
-                    <h3 className="text-xl font-bold">롤라</h3>
-                    <p className="text-sm text-primary">롤라움 파운더 · 리추얼 챌린지 리더</p>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    2022년 모닝 리추얼로 새벽 기상을 시작한 후 삶이 완전히 달라지는 경험을 하고, 
-                    4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 
-                    하루 10분 리추얼로 내 하루하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
-                  </p>
-                  <div className="text-sm text-muted-foreground space-y-1">
-                    <p>서울국제고 졸업</p>
-                    <p>한국외대 스페인어과 졸업</p>
-                    <p>4년차 리추얼 챌린지 리더</p>
-                    <p>리추얼 커뮤니티 '리추얼클럽' 파운더</p>
-                    <p>MBC 리추얼의힘 캠페인 방송 출연</p>
-                    <p>리추얼 관련 각종 강연&코칭 진행</p>
-                    <p>로컬 스타트업 컨설팅 회사 대표</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Laura */}
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-6">
-                    <img 
-                      src={lauraProfileUrl} 
-                      alt="로라 프로필" 
-                      className="w-32 h-32 rounded-full object-cover mb-4"
-                      data-testid="img-laura-profile"
-                    />
-                    <h3 className="text-xl font-bold">로라</h3>
-                    <p className="text-sm text-primary">원서읽기 리추얼 리더</p>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    원서읽기 덕후로 살아온 지 어느덧 16년. 
-                    작가의 언어 그대로를 읽어내는 원서읽기의 즐거움을 이제 여러분과 공유하고 싶어요. 
-                    영어 '독해'가 아닌 영어 '독서'의 세계가 펼쳐지도록 친절히 안내할게요!
-                  </p>
-                  <div className="text-sm text-muted-foreground space-y-1">
-                    <p>성남외고 영어과 졸업</p>
-                    <p>서울대 경제학부 졸업</p>
-                    <p>2021년 후반기 육군 통역장교 선발시험 합격</p>
-                    <p>(전) 영어 라디오 채널 TBS eFM 객원 리포터</p>
-                    <p>(전) IT회사 글로벌 PR 매니저</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <h2 className="text-2xl font-bold mb-8 text-center">파운더 소개</h2>
+            <Card className="max-w-md mx-auto">
+              <CardContent className="p-6">
+                <div className="flex flex-col items-center text-center mb-6">
+                  <img 
+                    src={rolaProfileUrl} 
+                    alt="롤라 프로필" 
+                    className="w-32 h-32 rounded-full object-cover mb-4"
+                    data-testid="img-rola-profile"
+                  />
+                  <h3 className="text-xl font-bold">롤라</h3>
+                  <p className="text-sm text-primary">롤라움 파운더 · 리추얼 챌린지 리더</p>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  2022년 모닝 리추얼로 새벽 기상을 시작한 후 삶이 완전히 달라지는 경험을 하고, 
+                  4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 
+                  하루 10분 리추얼로 내 하루하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
+                </p>
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p>서울국제고 졸업</p>
+                  <p>한국외대 스페인어과 졸업</p>
+                  <p>4년차 리추얼 챌린지 리더</p>
+                  <p>리추얼 커뮤니티 '리추얼클럽' 파운더</p>
+                  <p>MBC 리추얼의힘 캠페인 방송 출연</p>
+                  <p>리추얼 관련 각종 강연&코칭 진행</p>
+                  <p>로컬 스타트업 컨설팅 회사 대표</p>
+                </div>
+              </CardContent>
+            </Card>
           </section>
 
           {/* CTA */}
