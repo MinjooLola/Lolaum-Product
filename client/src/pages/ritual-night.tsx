@@ -251,8 +251,8 @@ export default function RitualNight() {
             {[
               { value: "120+명", label: "누적 참가자", id: "participants" },
               { value: "512+회", label: "누적 챌린지 참여", id: "challenges" },
-              { value: "60%+", label: "재참여율", id: "retention" },
-              { value: "15명+", label: "1년 이상 참여 멤버", id: "long-term" },
+              { value: "70%+", label: "재참여율", id: "retention" },
+              { value: "42기+", label: "현재까지 운영 기수", id: "cohorts" },
             ].map((stat) => (
               <div key={stat.label} className="text-center" data-testid={`stat-${stat.id}`}>
                 <p className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</p>

@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift } from "lucide-react";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar } from "lucide-react";
 
 import communityImg1 from "@assets/모자이크_1767252651725.jpg";
 import communityImg2 from "@assets/KakaoTalk_20251214_094412042_27_1767252651728.jpg";
@@ -76,6 +76,18 @@ const communityBenefitsWithPhotos = [
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* Event Banner */}
+      <Link href="/ritual-night">
+        <div className="bg-primary text-primary-foreground py-3 px-4 text-center cursor-pointer hover:bg-primary/90 transition-colors" data-testid="banner-ritual-night">
+          <div className="flex items-center justify-center gap-2 flex-wrap">
+            <Calendar className="w-4 h-4" />
+            <span className="font-medium">리추얼 나잇: 신년계획 뽀개기</span>
+            <span className="text-primary-foreground/80">| 2026.01.27 (화) 19:30 디캠프 선릉</span>
+            <Badge variant="secondary" className="ml-2">신청하기</Badge>
+          </div>
+        </div>
+      </Link>
+
       {/* Hero Section */}
       <section className="relative py-20 px-4 md:py-32 bg-gradient-to-b from-accent/30 to-background">
         <div className="max-w-4xl mx-auto text-center">
@@ -92,9 +104,11 @@ export default function Home() {
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
-          <p className="text-sm text-muted-foreground mb-8">
-            43기 챌린지 기간: 2/9(월)~2/27(금) (OT: 2/8(일) 밤 9시 30분, Final 공유회: 2/27(금) 밤 9시 30분)
-          </p>
+          <div className="text-sm text-muted-foreground mb-8 space-y-1">
+            <p>43기 챌린지 기간: 2/9(월)~2/27(금)</p>
+            <p>* OT: 2/8(일) 밤 9시 30분~10시 30분</p>
+            <p>* Final 공유회: 2/27(금) 밤 9시 30분~10시 30분</p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
@@ -236,12 +250,12 @@ export default function Home() {
               <div className="text-sm text-muted-foreground">누적 챌린지 참여</div>
             </div>
             <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">60%+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">70%+</div>
               <div className="text-sm text-muted-foreground">재참여율</div>
             </div>
             <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15명+</div>
-              <div className="text-sm text-muted-foreground">1년 이상 참여 멤버</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">42기+</div>
+              <div className="text-sm text-muted-foreground">현재까지 운영 기수</div>
             </div>
           </div>
         </div>
