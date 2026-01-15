@@ -61,12 +61,12 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4">42기 리추얼 챌린지</Badge>
+          <Badge variant="secondary" className="mb-4">43기 리추얼 챌린지</Badge>
           <h1 className="text-3xl md:text-4xl font-bold mb-4" data-testid="text-pricing-title">
             패키지 & 가격
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            1/5(월) ~ 1/23(금) 3주간 진행
+            2/9(월) ~ 2/27(금) 3주간 진행
           </p>
         </div>
 
@@ -194,7 +194,7 @@ export default function Pricing() {
         <div className="text-center mt-12">
           <Button size="lg" asChild data-testid="button-pricing-to-apply">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-              지금 신청하기
+              42기 마감 | 지금 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>

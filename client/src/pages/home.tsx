@@ -81,7 +81,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
             <Sparkles className="w-3 h-3 mr-1" />
-            42기 모집 마감: 1/3(토) 자정 | 선착순 마감
+            43기 모집 기간: 1/28(수)~2/4(수)
           </Badge>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
             의지가 아니라 환경으로
@@ -93,12 +93,12 @@ export default function Home() {
             결국 '해내는 사람'을 만듭니다.
           </p>
           <p className="text-sm text-muted-foreground mb-8">
-            42기 챌린지 기간: 1/5(월) ~ 1/23(금)
+            43기 챌린지 기간: 2/9(월)~2/27(금) (OT: 2/8(일) 밤 9시 30분, Final 공유회: 2/27(금) 밤 9시 30분)
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-                리추얼 챌린지 신청하기
+                42기 마감 | 리추얼 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
@@ -323,7 +323,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild data-testid="button-cta-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-                신청하기
+                42기 마감 | 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>

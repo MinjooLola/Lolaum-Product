@@ -240,11 +240,11 @@ export default function Reviews() {
             다음 후기의 주인공은 당신입니다
           </h2>
           <p className="text-muted-foreground mb-6">
-            42기 리추얼 챌린지에 함께하세요
+            43기 리추얼 챌린지에 함께하세요
           </p>
           <Button size="lg" asChild data-testid="button-reviews-apply">
             <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-              챌린지 신청하기
+              42기 마감 | 챌린지 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>

@@ -13,6 +13,7 @@ import Pricing from "@/pages/pricing";
 import Reviews from "@/pages/reviews";
 import FAQ from "@/pages/faq";
 import Apply from "@/pages/apply";
+import RitualNight from "@/pages/ritual-night";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/reviews" component={Reviews} />
         <Route path="/faq" component={FAQ} />
         <Route path="/apply" component={Apply} />
+        <Route path="/ritual-night" component={RitualNight} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
