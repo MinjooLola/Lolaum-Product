@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, MapPin, Clock, Users, Check, X, MessageCircle, Sparkles, Target, RefreshCw } from "lucide-react";
 
 import dcampLogo from "@assets/dcamp_Logo_RGB_Orange_1768478039647.png";
+import heroImage from "@assets/KakaoTalk_20251214_094412042_17_1768483168651.jpg";
 
 const GOOGLE_FORM_URL = "https://forms.gle/hAvpEQpEYZa7TGv48";
 const KAKAO_CHAT_URL = "https://pf.kakao.com/_xhQUHn/chat";
@@ -12,13 +13,18 @@ export default function RitualNight() {
   return (
     <div className="min-h-screen">
       {/* Section 1: Hero - 긴급성 헤더 */}
-      <section className="relative py-20 px-4 md:py-28 bg-gradient-to-b from-primary/20 to-background">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-20 px-4 md:py-28">
+        {/* Background Image with Dark Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img src={heroImage} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <Badge variant="secondary" className="mb-6">
             <Sparkles className="w-3 h-3 mr-1" />
             단 한 번의 밤
           </Badge>
-          <p className="text-lg md:text-xl text-muted-foreground mb-4">
+          <p className="text-lg md:text-xl text-white/80 mb-4">
             아직도 2026년 계획이 비어 있나요?
           </p>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-ritual-night-headline">
@@ -31,20 +37,20 @@ export default function RitualNight() {
           </h2>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full text-sm">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
               <Calendar className="w-4 h-4" />
               <span>2026.01.27 (화) 19:30–21:00</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full text-sm">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
               <MapPin className="w-4 h-4" />
               <span>디캠프 선릉</span>
             </div>
           </div>
 
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-lg text-white/80 mb-8">
             혼자 미루다 끝내는 신년계획,
             <br />
-            이번엔 정해진 시간 안에 <span className="font-semibold text-foreground">'완성'</span>하세요.
+            이번엔 정해진 시간 안에 <span className="font-semibold text-white">'완성'</span>하세요.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -370,7 +376,8 @@ export default function RitualNight() {
             <Card data-testid="card-benefit-2">
               <CardContent className="p-6 text-center">
                 <RefreshCw className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">나만의 리추얼 설계안</h3>
+                <h3 className="font-semibold mb-2">나만의 실행 전략 설계안</h3>
+                <p className="text-sm text-muted-foreground">Don't & Do & 실행계획</p>
               </CardContent>
             </Card>
             <Card data-testid="card-benefit-3">
@@ -381,7 +388,9 @@ export default function RitualNight() {
             </Card>
           </div>
           <div className="text-center p-6 bg-accent/20 rounded-lg" data-testid="section-pricing">
-            <p className="text-2xl font-bold text-primary mb-2" data-testid="text-price">참가비 10,000원</p>
+            <p className="text-sm text-muted-foreground mb-1">정가 20,000원</p>
+            <p className="text-2xl font-bold text-primary mb-1" data-testid="text-price">얼리버드 10,000원</p>
+            <p className="text-sm text-primary font-medium mb-2">(1월 22일까지)</p>
             <p className="text-sm text-muted-foreground">간단한 식사 & 음료 제공</p>
           </div>
         </div>
