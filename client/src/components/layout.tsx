@@ -1,141 +1,132 @@
 import { Link, useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
-import { cn } from "@/lib/utils";
+import logoUrl from "@assets/Lolaum_logo_영문_y_1767238392580.png";
 
-export function Layout({ children }: { children: React.ReactNode }) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const navLinks = [
+  { href: "/", label: "홈" },
+  { href: "/about", label: "About" },
+  { href: "/challenges", label: "챌린지" },
+  { href: "/pricing", label: "가격" },
+  { href: "/reviews", label: "후기" },
+  { href: "/faq", label: "FAQ" },
+];
+
+export function Header() {
   const [location] = useLocation();
-
-  const navItems = [
-    { label: "About", href: "/about" },
-    { label: "Challenges", href: "/challenges" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Reviews", href: "/reviews" },
-    { label: "FAQ", href: "/faq" },
-  ];
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border/40">
-        <div className="container-width">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 group">
-              <Leaf className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-serif text-xl md:text-2xl font-semibold text-foreground tracking-tight">
-                Lolaum
-              </span>
-            </Link>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="max-w-6xl mx-auto flex h-14 items-center justify-between gap-4 px-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center" data-testid="link-logo">
+          <img src={logoUrl} alt="Lolaum" className="h-6" />
+        </Link>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium transition-colors duration-200 hover:text-primary",
-                    location === item.href
-                      ? "text-primary font-semibold"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link href="/apply">
-                <button className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-                  Apply Now
-                </button>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 text-foreground"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`px-3 py-2 text-sm font-display rounded-md transition-colors hover-elevate ${
+                location === link.href
+                  ? "text-primary font-medium"
+                  : "text-muted-foreground"
+              }`}
+              data-testid={`nav-link-${link.href.slice(1) || "home"}`}
             >
-              {isMobileMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* CTA */}
+        <div className="hidden md:block">
+          <Button size="sm" className="font-display" asChild data-testid="nav-button-apply">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">신청하기</a>
+          </Button>
         </div>
 
-        {/* Mobile Nav Dropdown */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border/50 shadow-xl animate-in slide-in-from-top-2">
-            <div className="px-4 py-6 space-y-4">
-              {navItems.map((item) => (
+        {/* Mobile Menu */}
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" data-testid="button-mobile-menu">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <div className="flex flex-col gap-4 mt-8">
+              {navLinks.map((link) => (
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "block text-lg font-medium py-2",
-                    location === item.href ? "text-primary" : "text-muted-foreground"
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  key={link.href}
+                  href={link.href}
+                  className={`block px-3 py-2 text-lg font-display rounded-md transition-colors ${
+                    location === link.href
+                      ? "text-primary font-medium bg-primary/5"
+                      : "text-muted-foreground"
+                  }`}
+                  onClick={() => setOpen(false)}
+                  data-testid={`mobile-nav-link-${link.href.slice(1) || "home"}`}
                 >
-                  {item.label}
+                  {link.label}
                 </Link>
               ))}
-              <Link href="/apply" onClick={() => setIsMobileMenuOpen(false)}>
-                <button className="w-full mt-4 px-5 py-3 rounded-lg bg-primary text-primary-foreground text-base font-semibold hover:bg-primary/90 shadow-md">
-                  Apply Now
-                </button>
-              </Link>
+              <Button className="w-full mt-4 font-display" asChild data-testid="mobile-nav-button-apply">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>신청하기</a>
+              </Button>
             </div>
-          </div>
-        )}
-      </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  );
+}
 
-      {/* Main Content */}
-      <main className="flex-grow">{children}</main>
-
-      {/* Footer */}
-      <footer className="bg-secondary/30 pt-16 pb-8 border-t border-border">
-        <div className="container-width">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-1 md:col-span-2">
-              <Link href="/" className="flex items-center space-x-2 mb-4">
-                <Leaf className="w-5 h-5 text-primary" />
-                <span className="font-serif text-xl font-bold">Lolaum</span>
-              </Link>
-              <p className="text-muted-foreground max-w-sm leading-relaxed">
-                Environment over Willpower.<br/>
-                We help you build sustainable rituals through structured environments, not just effort.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Explore</h4>
-              <ul className="space-y-3">
-                {navItems.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-3 text-muted-foreground">
-                <li>hello@lolaum.com</li>
-                <li>Seoul, South Korea</li>
-                <li>Instagram: @lolaum_official</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground/60">
-            <p>© {new Date().getFullYear()} Lolaum. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <span>Terms of Service</span>
-              <span>Privacy Policy</span>
-            </div>
+export function Footer() {
+  return (
+    <footer className="border-t py-8 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <img src={logoUrl} alt="Lolaum" className="h-5" />
+          <p className="text-sm text-muted-foreground text-center">
+            의지가 아니라 환경으로, 당신의 루틴을 완성하는 곳
+          </p>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <a 
+              href="https://pf.kakao.com/_xhQUHn" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+              data-testid="footer-link-kakao"
+            >
+              카카오톡
+            </a>
+            <a 
+              href="https://www.instagram.com/lolaum_ritual/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+              data-testid="footer-link-instagram"
+            >
+              인스타그램
+            </a>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
+  );
+}
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
     </div>
   );
 }
