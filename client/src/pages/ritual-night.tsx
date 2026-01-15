@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, MapPin, Clock, Users, Check, X, MessageCircle, Sparkles, Target, RefreshCw } from "lucide-react";
 
+import dcampLogo from "@assets/dcamp_Logo_RGB_Orange_1768478039647.png";
+
 const GOOGLE_FORM_URL = "https://forms.gle/hAvpEQpEYZa7TGv48";
 const KAKAO_CHAT_URL = "https://pf.kakao.com/_xhQUHn/chat";
 
@@ -208,7 +210,7 @@ export default function RitualNight() {
             {[
               { num: "1", title: "2026년 나의 키워드 정하기" },
               { num: "2", title: "연간 목표 수립 (Work & Life)" },
-              { num: "3", title: "올해의 리추얼 설계", sub: "Do / Don't / 실행 계획" },
+              { num: "3", title: "실행 전략 설계", sub: "Don't & Do & 실행계획 프레임워크" },
               { num: "4", title: "2026 신년 계획 선언" },
             ].map((item) => (
               <Card key={item.num} data-testid={`card-program-step-${item.num}`}>
@@ -379,9 +381,8 @@ export default function RitualNight() {
             </Card>
           </div>
           <div className="text-center p-6 bg-accent/20 rounded-lg" data-testid="section-pricing">
-            <p className="font-medium mb-2">간단한 식사 & 음료 제공</p>
-            <p className="text-2xl font-bold text-primary" data-testid="text-price">참가비 10,000원</p>
-            <p className="text-sm text-muted-foreground mt-1">(공간·운영비)</p>
+            <p className="text-2xl font-bold text-primary mb-2" data-testid="text-price">참가비 10,000원</p>
+            <p className="text-sm text-muted-foreground">간단한 식사 & 음료 제공</p>
           </div>
         </div>
       </section>
@@ -507,7 +508,7 @@ export default function RitualNight() {
               </a>
             </Button>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-10">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               <span>2026.01.27 (화) 19:30–21:00</span>
@@ -520,6 +521,12 @@ export default function RitualNight() {
               <Clock className="w-4 h-4" />
               <span>90분</span>
             </div>
+          </div>
+
+          {/* 공간후원 */}
+          <div className="flex items-center justify-center gap-3" data-testid="sponsor-dcamp">
+            <span className="text-xs text-muted-foreground">공간후원</span>
+            <img src={dcampLogo} alt="디캠프" className="h-6" />
           </div>
         </div>
       </section>

@@ -104,11 +104,9 @@ export default function Home() {
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
-          <div className="text-sm text-muted-foreground mb-8 space-y-1">
-            <p>43기 챌린지 기간: 2/9(월)~2/27(금)</p>
-            <p>* OT: 2/8(일) 밤 9시 30분~10시 30분</p>
-            <p>* Final 공유회: 2/27(금) 밤 9시 30분~10시 30분</p>
-          </div>
+          <p className="text-sm text-muted-foreground mb-8">
+            43기 챌린지 기간: 2/9(월)~2/27(금)
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
