@@ -388,10 +388,16 @@ export default function RitualNight() {
             </Card>
           </div>
           <div className="text-center p-6 bg-accent/20 rounded-lg" data-testid="section-pricing">
-            <p className="text-sm text-muted-foreground mb-1">정가 20,000원</p>
-            <p className="text-2xl font-bold text-primary mb-1" data-testid="text-price">얼리버드 10,000원</p>
-            <p className="text-sm text-primary font-medium mb-2">(1월 22일까지)</p>
-            <p className="text-sm text-muted-foreground">간단한 식사 & 음료 제공</p>
+            <p className="text-2xl font-bold text-primary mb-2" data-testid="text-price">참가비 20,000원</p>
+            <p className="text-sm text-muted-foreground mb-4">간단한 식사 & 음료 제공</p>
+            <div className="text-left text-xs text-muted-foreground border-t pt-4 mt-2">
+              <p className="font-semibold mb-1">환불 규정</p>
+              <ul className="list-disc pl-4 space-y-1">
+                <li>행사 2일 전까지: 100% 환불</li>
+                <li>행사 1일 전까지: 50% 환불</li>
+                <li>행사 당일 취소: 환불 불가</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
