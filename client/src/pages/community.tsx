@@ -12,9 +12,19 @@ export default function Community() {
           <h1 className="text-3xl md:text-5xl font-bold mb-6 break-keep">
             롤라움의 커뮤니티, <span className="text-primary">&lt;리추얼클럽&gt;</span>을 소개합니다
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground break-keep">
+          <p className="text-lg md:text-xl text-muted-foreground break-keep mb-6">
             회사 밖의 나를 회복하며, 일상을 건강하게 설계해가는 루틴 커뮤니티
           </p>
+          <a 
+            href="https://www.instagram.com/lolaum_ritual" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
+            data-testid="button-instagram-stories"
+          >
+            <Instagram className="w-5 h-5" />
+            리추얼클럽 이야기 보러가기
+          </a>
         </div>
       </section>
 
@@ -110,10 +120,15 @@ export default function Community() {
                   <Instagram className="w-5 h-5" />
                   인스타그램 DM 문의
                 </a>
-                <div className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full">
+                <a 
+                  href="https://pf.kakao.com/_xhQUHn" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
+                >
                   <MessageCircle className="w-5 h-5" />
-                  기존 멤버에게 문의
-                </div>
+                  카카오톡 문의
+                </a>
               </div>
               <p className="text-sm text-muted-foreground break-keep">
                 커뮤니티 참여 카카오톡 톡방 링크를 전달드립니다.

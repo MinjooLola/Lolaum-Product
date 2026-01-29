@@ -112,7 +112,7 @@ const packages = [
     id: "double",
     name: "2개 챌린지",
     price: 90000,
-    deposit: 30000,
+    deposit: 15000,
     dailyCost: "하루 4,286원",
     dailyHint: "아메리카노 한 잔 가격",
     features: ["챌린지 2개 선택", "3주 프로그램", "커뮤니티 참여", "10,000원 할인"],
@@ -122,7 +122,7 @@ const packages = [
     id: "unlimited",
     name: "무제한",
     price: 120000,
-    deposit: 30000,
+    deposit: 15000,
     dailyCost: "하루 5,714원",
     dailyHint: "라떼 한 잔 가격으로 8개 챌린지!",
     features: ["8개 챌린지 모두 참여 가능", "3주 프로그램", "커뮤니티 참여", "개당 15,000원꼴"],
@@ -132,7 +132,7 @@ const packages = [
     id: "unlimited-coaching",
     name: "무제한 + 1:1 코칭",
     price: 150000,
-    deposit: 30000,
+    deposit: 15000,
     dailyCost: "하루 7,143원",
     dailyHint: "점심값으로 인생 루틴 만들기",
     features: ["8개 챌린지 모두 참여 가능", "3주 프로그램", "1:1 루틴 진단 & 코칭", "맞춤형 케어 프로그램"],
@@ -145,7 +145,6 @@ const discounts = [
   { title: "직전 기수 리추얼클럽 챌린저", desc: "", amount: 5000 },
   { title: "직전 기수 블로그 후기 작성", desc: "", amount: 5000 },
   { title: "직전 기수 어워즈 수상자", desc: "", amount: 5000 },
-  { title: "블로그 모집 포스팅 공유", desc: "", amount: 5000 },
 ];
 
 const blogLinks = [
@@ -395,7 +394,7 @@ export default function Challenges() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2">추가 할인 혜택</h3>
-                  <p className="text-sm text-muted-foreground mb-4">중복 할인 가능, 최대 3만원 할인</p>
+                  <p className="text-sm text-muted-foreground mb-4">중복 할인 가능, 최대 3만원 할인 · 그 외 할인 쿠폰, 업그레이드 쿠폰 활용 가능</p>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {discounts.map((discount, i) => (
                       <div key={i} className="flex items-center justify-between p-3 bg-muted/50 rounded-md">

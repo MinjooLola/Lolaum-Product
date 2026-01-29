@@ -10,9 +10,6 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/challenges", label: "챌린지" },
   { href: "/community", label: "커뮤니티" },
-  { href: "/pricing", label: "가격" },
-  { href: "/reviews", label: "후기" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 export function Header() {

@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift, Calendar } from "lucide-react";
+import { Sparkles, Users, ArrowRight, Quote, CheckCircle, XCircle, MessageCircle, Gift } from "lucide-react";
 
 import communityImg1 from "@assets/모자이크_1767252651725.jpg";
 import communityImg2 from "@assets/KakaoTalk_20251214_094412042_27_1767252651728.jpg";
@@ -76,18 +76,6 @@ const communityBenefitsWithPhotos = [
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Event Banner */}
-      <Link href="/community">
-        <div className="bg-primary text-primary-foreground py-3 px-4 text-center cursor-pointer hover:bg-primary/90 transition-colors" data-testid="banner-ritual-night">
-          <div className="flex items-center justify-center gap-2 flex-wrap">
-            <Calendar className="w-4 h-4" />
-            <span className="font-medium">리추얼 나잇: 신년계획 뽀개기</span>
-            <span className="text-primary-foreground/80">| 2026.01.27 (화) 19:30 디캠프 선릉</span>
-            <Badge variant="secondary" className="ml-2">신청하기</Badge>
-          </div>
-        </div>
-      </Link>
-
       {/* Hero Section */}
       <section className="relative py-20 px-4 md:py-32 bg-gradient-to-b from-accent/30 to-background">
         <div className="max-w-4xl mx-auto text-center">
