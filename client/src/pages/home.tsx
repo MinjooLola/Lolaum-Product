@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Event Banner */}
-      <Link href="/ritual-night">
+      <Link href="/community">
         <div className="bg-primary text-primary-foreground py-3 px-4 text-center cursor-pointer hover:bg-primary/90 transition-colors" data-testid="banner-ritual-night">
           <div className="flex items-center justify-center gap-2 flex-wrap">
             <Calendar className="w-4 h-4" />
@@ -93,7 +93,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
             <Sparkles className="w-3 h-3 mr-1" />
-            43기 모집 기간: 1/28(수)~2/4(수)
+            43기 모집 기간: 2/1(일)~2/5(목)
           </Badge>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
             의지가 아니라 환경으로
@@ -104,9 +104,11 @@ export default function Home() {
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
-          <p className="text-sm text-muted-foreground mb-8">
-            43기 챌린지 기간: 2/9(월)~2/27(금)
-          </p>
+          <div className="text-sm text-muted-foreground mb-8 space-y-1">
+            <p>43기 챌린지 기간: 2/9(월)~2/27(금)</p>
+            <p>* 43기 오리엔테이션: 2/8(일) 밤 10시-11시</p>
+            <p>* 43기 Final 나의변화공유회: 2/27(금) 밤 10시-11시</p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
@@ -240,12 +242,8 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">120+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500명+</div>
               <div className="text-sm text-muted-foreground">누적 참가자</div>
-            </div>
-            <div className="text-center p-6 bg-background rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">512+</div>
-              <div className="text-sm text-muted-foreground">누적 챌린지 참여</div>
             </div>
             <div className="text-center p-6 bg-background rounded-lg">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">70%+</div>

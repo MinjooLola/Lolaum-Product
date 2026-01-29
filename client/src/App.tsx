@@ -9,11 +9,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Challenges from "@/pages/challenges";
 import ChallengeDetail from "@/pages/challenge-detail";
-import Pricing from "@/pages/pricing";
-import Reviews from "@/pages/reviews";
-import FAQ from "@/pages/faq";
-import Apply from "@/pages/apply";
-import RitualNight from "@/pages/ritual-night";
+import Community from "@/pages/community";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -35,11 +31,7 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/challenges" component={Challenges} />
         <Route path="/challenges/:slug" component={ChallengeDetail} />
-        <Route path="/pricing" component={Pricing} />
-        <Route path="/reviews" component={Reviews} />
-        <Route path="/faq" component={FAQ} />
-        <Route path="/apply" component={Apply} />
-        <Route path="/ritual-night" component={RitualNight} />
+        <Route path="/community" component={Community} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

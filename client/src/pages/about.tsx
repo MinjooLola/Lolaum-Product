@@ -90,7 +90,7 @@ export default function About() {
                 <h3 className="text-xl font-bold">롤라</h3>
                 <p className="text-sm text-primary mb-4">롤라움 파운더 · 리추얼 챌린지 리더</p>
                 <p className="text-muted-foreground mb-4">
-                  2022년 모닝 리추얼로 시작한 새벽 기상 덕분에 삶이 완전히 달라지는 경험을 한 후, 4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 10분 리추얼로 하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
+                  2022년 모닝 리추얼로 시작한 새벽 기상 덕분에 삶이 완전히 달라지는 경험을 한 후, 4년간 누적 500명 이상이 참여하고 있는 리추얼 챌린지와 회사 밖 '나'를 회복하는 루틴 커뮤니티 리추얼클럽을 운영하고 있어요. 10분 리추얼로 하루를 원하는 방향으로 설계하는 법을 알려드릴게요!
                 </p>
                 <div className="text-sm text-muted-foreground space-y-1 mb-6">
                   <p>리추얼 커뮤니티 '리추얼클럽' 파운더</p>
