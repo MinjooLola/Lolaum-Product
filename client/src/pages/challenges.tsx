@@ -523,7 +523,7 @@ export default function Challenges() {
           </p>
           <Button size="lg" asChild data-testid="button-apply-now">
             <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-              42기 마감 | 지금 신청하기
+              지금 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>

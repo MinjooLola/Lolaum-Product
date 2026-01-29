@@ -100,7 +100,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-                42기 마감 | 리추얼 챌린지 신청하기
+                리추얼 챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
@@ -321,7 +321,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild data-testid="button-cta-apply">
               <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-                42기 마감 | 신청하기
+                신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>

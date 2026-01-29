@@ -244,7 +244,7 @@ export default function Reviews() {
           </p>
           <Button size="lg" asChild data-testid="button-reviews-apply">
             <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-              42기 마감 | 챌린지 신청하기
+              챌린지 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>

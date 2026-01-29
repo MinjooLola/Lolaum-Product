@@ -194,7 +194,7 @@ export default function Pricing() {
         <div className="text-center mt-12">
           <Button size="lg" asChild data-testid="button-pricing-to-apply">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-              42기 마감 | 지금 신청하기
+              지금 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>

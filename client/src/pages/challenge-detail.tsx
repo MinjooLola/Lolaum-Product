@@ -19,7 +19,7 @@ const rolaLeader: LeaderInfo = {
   name: "롤라",
   title: "롤라움 파운더 · 리추얼 챌린지 리더",
   image: rolaProfileUrl,
-  description: "2022년 모닝 리추얼로 시작한 새벽 기상 덕분에 삶이 완전히 달라지는 경험을 한 후, 4년간 120명이 넘는 멤버들이 500회 이상 참여하고 있는 리추얼 챌린지를 운영하고 있어요. 10분 리추얼로 하루를 원하는 방향으로 설계하는 법을 알려드릴게요!",
+  description: "2022년 모닝 리추얼로 시작한 새벽 기상 덕분에 삶이 완전히 달라지는 경험을 한 후, 4년간 누적 500명 이상이 참여하고 있는 리추얼 챌린지와 회사 밖 '나'를 회복하는 루틴 커뮤니티 리추얼클럽을 운영하고 있어요. 10분 리추얼로 하루를 원하는 방향으로 설계하는 법을 알려드릴게요!",
   credentials: [
     "리추얼 커뮤니티 '리추얼클럽' 파운더",
     "MBC 〈리추얼의 힘〉 캠페인 방송 출연",
@@ -341,7 +341,7 @@ export default function ChallengeDetail() {
         <div className="flex justify-center">
           <Button size="lg" asChild data-testid="button-challenge-apply">
             <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-              42기 마감 | 챌린지 신청하기
+              챌린지 신청하기
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>

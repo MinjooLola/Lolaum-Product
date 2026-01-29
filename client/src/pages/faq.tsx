@@ -76,7 +76,7 @@ export default function FAQ() {
             </Button>
             <Button asChild data-testid="button-faq-to-apply">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZmfv55kMjciu_PBe2E-HXXJ5KnZdNDuNpU6eHjrH39F2veQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                42기 마감 | 챌린지 신청하기
+                챌린지 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
