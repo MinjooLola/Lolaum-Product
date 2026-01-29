@@ -104,10 +104,10 @@ export default function Home() {
             매일 10분, 30분의 작은 리추얼이
             결국 '해내는 사람'을 만듭니다.
           </p>
-          <div className="text-sm text-muted-foreground mb-8 space-y-1">
-            <p>43기 챌린지 기간: 2/9(월)~2/27(금)</p>
-            <p>* 43기 오리엔테이션: 2/8(일) 밤 10시-11시</p>
-            <p>* 43기 Final 나의변화공유회: 2/27(금) 밤 10시-11시</p>
+          <div className="text-sm text-muted-foreground mb-8 space-y-2">
+            <p className="text-base font-semibold text-foreground">43기 챌린지 기간: 2/9(월)~2/27(금)</p>
+            <p className="text-xs">* 43기 오리엔테이션: 2/8(일) 밤 10시-11시</p>
+            <p className="text-xs">* 43기 Final 나의변화공유회: 2/27(금) 밤 10시-11시</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild data-testid="button-hero-apply">
@@ -240,16 +240,16 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">검증된 성과</h2>
             <p className="text-muted-foreground">2022년부터 4년간 체계적으로 운영된 프로그램</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-background rounded-lg">
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="text-center p-6 bg-background rounded-lg min-w-[140px]">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500명+</div>
               <div className="text-sm text-muted-foreground">누적 참가자</div>
             </div>
-            <div className="text-center p-6 bg-background rounded-lg">
+            <div className="text-center p-6 bg-background rounded-lg min-w-[140px]">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">70%+</div>
               <div className="text-sm text-muted-foreground">재참여율</div>
             </div>
-            <div className="text-center p-6 bg-background rounded-lg">
+            <div className="text-center p-6 bg-background rounded-lg min-w-[140px]">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">42기+</div>
               <div className="text-sm text-muted-foreground">현재까지 운영 기수</div>
             </div>
