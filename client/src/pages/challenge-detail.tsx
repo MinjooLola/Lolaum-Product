@@ -55,6 +55,7 @@ interface ChallengeData {
   frequency: string;
   recommendations: string[];
   leader: LeaderInfo;
+  blogLink?: string;
 }
 
 const challengesData: Record<string, ChallengeData> = {
@@ -195,7 +196,8 @@ const challengesData: Record<string, ChallengeData> = {
       "소비 패턴을 바꾸고 싶은 분",
       "자산관리를 습관으로 만들고 싶은 분"
     ],
-    leader: rolaLeader
+    leader: rolaLeader,
+    blogLink: "https://blog.naver.com/minjoo_lola/224131694194"
   },
   "english-reading": {
     slug: "english-reading",
@@ -271,6 +273,17 @@ export default function ChallengeDetail() {
                 <p key={i} className="text-muted-foreground mb-4">{paragraph}</p>
               ))}
             </div>
+
+            {challenge.blogLink && (
+              <div className="mt-4">
+                <Button variant="outline" size="sm" asChild data-testid="button-blog-link">
+                  <a href={challenge.blogLink} target="_blank" rel="noopener noreferrer">
+                    자세히 보러가기
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
+            )}
           </CardContent>
         </Card>
 
