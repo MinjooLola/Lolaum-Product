@@ -81,7 +81,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
             <Sparkles className="w-3 h-3 mr-1" />
-            43기 모집 기간: 2/1(일)~2/5(목)
+            43기 모집 기간: 2/2(월)~2/5(목)
           </Badge>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6" data-testid="text-hero-headline">
             의지가 아니라 환경으로
