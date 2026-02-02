@@ -58,7 +58,7 @@ const challenges = [
   {
     id: 5,
     slug: "spanish",
-    title: "언어리추얼챌린지",
+    title: "제2언어리추얼챌린지",
     shortDescription: "주 5회 10분 이상 나만의 제2외국어 공부 (스페인어, 프랑스어, 중국어, 일본어 등)",
     category: "언어",
     icon: Languages,

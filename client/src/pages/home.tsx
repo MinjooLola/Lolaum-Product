@@ -25,7 +25,7 @@ const challenges = [
   { id: 2, title: "운동리추얼", image: exerciseImg, slug: "exercise" },
   { id: 3, title: "독서리추얼", image: readingImg, slug: "reading" },
   { id: 4, title: "영어리추얼", image: englishImg, slug: "english" },
-  { id: 5, title: "언어리추얼", image: spanishImg, slug: "spanish" },
+  { id: 5, title: "제2언어리추얼", image: spanishImg, slug: "spanish" },
   { id: 6, title: "기록리추얼", image: writingImg, slug: "writing" },
   { id: 7, title: "자산관리리추얼", image: financeImg, slug: "finance" },
   { id: 8, title: "원서읽기리추얼", image: englishReadingImg, slug: "english-reading" },
